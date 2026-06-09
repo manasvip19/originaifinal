@@ -1,4 +1,4 @@
-# 🚀 OriginAI
+#  OriginAI
 
 ### Transforming Research Into Startup Opportunities
 
@@ -8,7 +8,7 @@ Instead of letting valuable research remain hidden inside journals, OriginAI ana
 
 ---
 
-# 🌍 Vision
+#  Vision
 
 Our vision is to create a future where every meaningful research discovery has a clear path toward commercialization, entrepreneurship, and real-world impact.
 
@@ -20,7 +20,7 @@ OriginAI connects the two.
 
 ---
 
-# ❗ Problem Statement
+#  Problem Statement
 
 Every year, millions of research papers are published worldwide.
 
@@ -51,7 +51,7 @@ As a result:
 
 ---
 
-# 💡 Solution
+#  Solution
 
 OriginAI acts as an AI-powered commercialization engine.
 
@@ -68,7 +68,7 @@ The platform:
 
 ---
 
-# 🔄 Workflow
+#  Workflow
 
 Research Paper
 ↓
@@ -90,7 +90,7 @@ Investor Insights
 
 ---
 
-# 🎯 Core Features
+#  Core Features
 
 ## 1. Research Understanding
 
@@ -240,7 +240,7 @@ Generate:
 
 ---
 
-# 🏗 System Architecture
+#  System Architecture
 
 ```text
 Frontend
@@ -262,7 +262,7 @@ Investor Report Engine
 
 ---
 
-# 🤖 AI Agents
+#  AI Agents
 
 OriginAI uses multiple specialized AI agents.
 
@@ -300,7 +300,7 @@ Produces investor-ready reports.
 
 ---
 
-# 🛠 Technology Stack
+#  Technology Stack
 
 ## Frontend
 
@@ -334,7 +334,7 @@ Future:
 
 ---
 
-# 📁 Repository Structure
+#  Repository Structure
 
 ```text
 .specify/
@@ -350,7 +350,7 @@ USER_MANUAL.md
 
 ---
 
-# 🚀 Future Scope
+#  Future Scope
 
 ### Phase 1
 
@@ -378,7 +378,7 @@ Research Commercialization Platform
 
 ---
 
-# 🎓 Use Cases
+#  Use Cases
 
 ### Researchers
 
@@ -402,7 +402,7 @@ Discover new technologies and markets.
 
 ---
 
-# 🌟 Why OriginAI Matters
+#  Why OriginAI Matters
 
 Research drives innovation.
 
@@ -416,10 +416,10 @@ OriginAI helps transform knowledge into impact by making research accessible, ac
 
 ---
 
-# 📜 License
+#  License
 
 MIT License
 
 ---
 
-# ❤️ Built to Transform Research Into Real-World Innovation
+#  Built to Transform Research Into Real-World Innovation
