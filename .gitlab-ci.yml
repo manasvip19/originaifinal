@@ -1,0 +1,41 @@
+stages:
+  - test
+  - scan
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  PYTHONPATH: "$CI_PROJECT_DIR"
+
+default:
+  image: python:3.11
+  before_script:
+    - python -m pip install --upgrade pip
+    - pip install -r requirements-dev.txt
+
+unit_tests:
+  stage: test
+  script:
+    - python -m pytest -q --cov=. --cov-report=html --cov-report=xml
+  artifacts:
+    paths:
+      - .pytest_cache/
+      - htmlcov/
+      - coverage.xml
+    reports:
+      coverage_report:
+        path: coverage.xml
+    when: always
+  coverage: '/TOTAL.*\s+([0-9]{1,3})\%/'
+
+security_scan:
+  stage: scan
+  script:
+    - pip-audit --progress-spinner off
+    - safety check --full-report --file=requirements.txt
+  allow_failure: false
+
+validate_repo:
+  stage: scan
+  script:
+    - pre-commit run --all-files
+  allow_failure: false
