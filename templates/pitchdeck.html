@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OriginAI | Pitch Deck</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <div class="bg-grid"></div>
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+
+    <nav class="navbar">
+        <div class="logo">OriginAI</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/analyzer">Analyzer</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/investor-report">Investor Report</a>
+            <a href="/pitchdeck">Pitch Deck</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">Pitch Deck</div>
+        <h1>Investor-ready pitch deck generated from research analysis</h1>
+        <p>Review high-impact slides that cover problem, solution, market, competition and funding needs.</p>
+    </section>
+
+    <section class="report-actions">
+        <button class="btn-primary" onclick="printDeck()">Print Pitch Deck</button>
+        <button class="btn-secondary" onclick="downloadPitchDeck()">Download Deck</button>
+        <button class="btn-primary" onclick="window.location.href='/investor-report'">Back to Report</button>
+    </section>
+
+    <section class="deck-grid" id="deck-slides">
+        <div class="card">
+            <h3>Loading pitch deck...</h3>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-k0adb4Tn7YdhPGW7lqitMNi3FMtxypxqT9y9W4cWIK2yL2Dee5lLxHkzFVKc4AQV5H3ZCee4v9Az0jcpI0f9kg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/static/js/pitchdeck.js"></script>
+</body>
+</html>

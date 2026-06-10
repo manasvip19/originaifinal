@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OriginAI | Research Analyzer</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+      href="/static/css/analyzer.css">
+</head>
+
+<body>
+
+    <!-- Background Effects -->
+    <div class="bg-grid"></div>
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            OriginAI
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/analyzer">Analyzer</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/investor-report">Investor Report</a>
+            <a href="/pitchdeck">Pitch Deck</a>
+        </div>
+
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-badge">
+            Research Commercialization Engine
+        </div>
+
+        <h1>
+            Transform Research Into
+            Startup Opportunities
+        </h1>
+
+        <p>
+            Upload a research paper and discover
+            commercialization opportunities,
+            startup ideas and investor insights.
+        </p>
+
+    </section>
+
+    <!-- UPLOAD -->
+
+    <section class="upload-section">
+
+        <div class="upload-card">
+
+            <div class="upload-icon">
+                📄
+            </div>
+
+            <h2>Upload Research Paper</h2>
+
+            <p id="uploadMessage">
+                Select a PDF research paper to begin intelligent analysis.
+            </p>
+
+            <input
+                type="file"
+                id="pdfUpload"
+                accept="application/pdf"
+                hidden>
+
+            <button
+                class="btn-primary"
+                onclick="document.getElementById('pdfUpload').click()">
+
+                Select File
+
+            </button>
+
+            <button
+                class="btn-primary"
+                id="analyzeBtn">
+
+                Analyze Research
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- PROCESSING -->
+
+    <section
+        class="processing-section"
+        id="processingSection">
+
+        <h2>
+            AI Analysis Pipeline
+        </h2>
+
+        <div class="process-container">
+
+            <div class="process-step">
+                Reading Research Paper...
+            </div>
+
+            <div class="process-step">
+                Extracting Discoveries...
+            </div>
+
+            <div class="process-step">
+                Mapping Industries...
+            </div>
+
+            <div class="process-step">
+                Generating Startup...
+            </div>
+
+            <div class="process-step">
+                Market Analysis...
+            </div>
+
+            <div class="process-step">
+                Building Investor Report...
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- RESULTS -->
+
+    <section
+        class="results-section"
+        id="resultsSection">
+
+        <div class="section-title">
+
+            Analysis Results
+
+        </div>
+
+        <div class="results-grid">
+
+            <div class="result-card">
+                <h3>Research Summary</h3>
+                <p id="summary-text">Upload a PDF to view the summed research overview.</p>
+            </div>
+
+            <div class="result-card">
+                <h3>Key Discovery</h3>
+                <p id="discovery-text">The main innovation will appear here after analysis.</p>
+            </div>
+
+            <div class="result-card">
+                <h3>Industry Match</h3>
+                <p id="industry">Industry alignment will appear here.</p>
+            </div>
+
+            <div class="result-card">
+                <h3>Startup Opportunity</h3>
+                <p id="startup-name">A research-driven startup concept will appear here.</p>
+            </div>
+
+            <div class="result-card">
+                <h3>Market Size</h3>
+                <p id="market-size">--</p>
+            </div>
+
+            <div class="result-card">
+                <h3>TAM / SAM / SOM</h3>
+                <p id="market-tam">--</p>
+                <p id="market-sam">--</p>
+                <p id="market-som">--</p>
+            </div>
+
+            <div class="result-card">
+                <h3>Revenue Model</h3>
+                <p id="revenue-model">--</p>
+            </div>
+
+            <div class="result-card">
+                <h3>Risk Assessment</h3>
+                <p id="risk-score">--</p>
+            </div>
+
+            <div class="result-card">
+                <h3>Investor Interest</h3>
+                <p id="investor-interest">--</p>
+            </div>
+
+            <div class="result-card">
+                <h3>Funding Readiness</h3>
+                <p id="funding-readiness">--</p>
+            </div>
+
+        </div>
+
+        <div class="results-actions">
+            <button class="btn-secondary" onclick="window.location.href='/dashboard'">View Dashboard</button>
+            <button class="btn-primary" onclick="window.location.href='/investor-report'">Open Investor Report</button>
+        </div>
+
+    </section>
+
+    <!-- SCORE -->
+
+    <section class="score-section">
+
+        <div class="score-card">
+
+            <h2>
+                Opportunity Score
+            </h2>
+
+            <div class="score-ring">
+
+                <svg width="260" height="260">
+
+                    <circle
+                        cx="130"
+                        cy="130"
+                        r="100"
+                        class="ring-bg">
+                    </circle>
+
+                    <circle
+                        cx="130"
+                        cy="130"
+                        r="100"
+                        class="ring-progress">
+                    </circle>
+
+                </svg>
+
+                <div class="score-value">
+                    --
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- INVESTOR INSIGHTS -->
+
+    <section class="investor-section">
+
+        <div class="section-title">
+
+            Investor Intelligence
+
+        </div>
+
+        <div class="investor-grid">
+
+            <div class="insight-card">
+
+                <h3>Market Size</h3>
+
+                <span>--</span>
+
+            </div>
+
+            <div class="insight-card">
+
+                <h3>Innovation</h3>
+
+                <span>-- / 100</span>
+
+            </div>
+
+            <div class="insight-card">
+
+                <h3>Feasibility</h3>
+
+                <span>-- / 100</span>
+
+            </div>
+
+            <div class="insight-card">
+
+                <h3>Scalability</h3>
+
+                <span>-- / 100</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="/static/js/analyzer.js"></script>
+
+</body>
+
+</html>

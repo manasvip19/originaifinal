@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OriginAI | Investor Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <div class="bg-grid"></div>
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+
+    <nav class="navbar">
+        <div class="logo">OriginAI</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/analyzer">Analyzer</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/investor-report">Investor Report</a>
+            <a href="/pitchdeck">Pitch Deck</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">Investor Report</div>
+        <h1>Investor Intelligence and Commercial Opportunity</h1>
+        <p>Review research-driven venture potential with a complete investor-ready report, risks and go-to-market guidance.</p>
+    </section>
+
+    <section class="report-actions">
+        <button class="btn-primary" onclick="printReport()">Print Investor Report</button>
+        <button class="btn-secondary" onclick="exportReportPdf()">Download Investor Report</button>
+        <button class="btn-secondary" onclick="downloadAnalysis()">Export Analysis JSON</button>
+        <button class="btn-secondary" onclick="downloadStartupSummary()">Export Startup Summary</button>
+        <button class="btn-primary" onclick="window.location.href='/pitchdeck'">View Pitch Deck</button>
+    </section>
+
+    <section id="investor-report" class="report-grid">
+        <div class="card">
+            <h3>Executive Summary</h3>
+            <p id="executive-summary">Loading investor insights...</p>
+        </div>
+        <div class="card">
+            <h3>Research Overview</h3>
+            <p id="research-overview">Loading research summary...</p>
+        </div>
+        <div class="card">
+            <h3>Key Discovery</h3>
+            <p id="key-discovery">Loading discovery details...</p>
+        </div>
+        <div class="card">
+            <h3>Startup Opportunity</h3>
+            <p id="startup-opportunity">Loading startup opportunity...</p>
+        </div>
+        <div class="card">
+            <h3>Problem Solved</h3>
+            <p id="problem-solved">Loading problem statement...</p>
+        </div>
+        <div class="card">
+            <h3>Solution</h3>
+            <p id="solution">Loading solution summary...</p>
+        </div>
+        <div class="card">
+            <h3>Industry</h3>
+            <p id="industry">--</p>
+        </div>
+        <div class="card">
+            <h3>Target Market</h3>
+            <p id="target-market">--</p>
+        </div>
+        <div class="card">
+            <h3>Market Size</h3>
+            <p id="market-size">--</p>
+        </div>
+        <div class="card">
+            <h3>TAM</h3>
+            <p id="tam">--</p>
+        </div>
+        <div class="card">
+            <h3>SAM</h3>
+            <p id="sam">--</p>
+        </div>
+        <div class="card">
+            <h3>SOM</h3>
+            <p id="som">--</p>
+        </div>
+        <div class="card">
+            <h3>Business Model</h3>
+            <p id="business-model">--</p>
+        </div>
+        <div class="card">
+            <h3>Revenue Model</h3>
+            <p id="revenue-model">--</p>
+        </div>
+        <div class="card">
+            <h3>Go-To-Market Strategy</h3>
+            <p id="go-to-market-plan">--</p>
+        </div>
+        <div class="card">
+            <h3>Competitive Landscape</h3>
+            <p id="competition-analysis">--</p>
+        </div>
+        <div class="card">
+            <h3>Risk Analysis</h3>
+            <p id="risk-assessment">--</p>
+        </div>
+        <div class="card">
+            <h3>Technology Readiness</h3>
+            <p id="technology-readiness">--</p>
+        </div>
+        <div class="card">
+            <h3>Commercialization Readiness</h3>
+            <p id="commercialization-readiness">--</p>
+        </div>
+        <div class="card">
+            <h3>Funding Readiness</h3>
+            <p id="funding-readiness">--</p>
+        </div>
+        <div class="card">
+            <h3>Expected ROI</h3>
+            <p id="expected-roi">--</p>
+        </div>
+        <div class="card">
+            <h3>Investment Recommendation</h3>
+            <p id="investment-recommendation">--</p>
+        </div>
+        <div class="card">
+            <h3>Final Verdict</h3>
+            <p id="final-verdict">--</p>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-k0adb4Tn7YdhPGW7lqitMNi3FMtxypxqT9y9W4cWIK2yL2Dee5lLxHkzFVKc4AQV5H3ZCee4v9Az0jcpI0f9kg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/static/js/investor-report.js"></script>
+</body>
+</html>
