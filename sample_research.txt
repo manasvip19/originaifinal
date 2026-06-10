@@ -1,0 +1,5 @@
+Deep Learning for Crop Disease Detection
+
+This paper proposes a computer vision model
+capable of detecting crop diseases with
+95% accuracy.

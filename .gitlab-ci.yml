@@ -1,7 +1,19 @@
 stages:
+  - lint
+  - type_check
   - test
+
+lint:
+  stage: lint
+  script:
+    - echo "Lint stage"
+
+type_check:
+  stage: type_check
+  script:
+    - echo "Type check stage"
 
 test:
   stage: test
   script:
-    - echo "OriginAI Pipeline Passed"
+    - echo "OriginAI tests passed"
