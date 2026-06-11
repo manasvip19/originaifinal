@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>OriginAI | Intelligence Dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+      href="/static/css/dashboard.css">
+
+</head>
+
+<body>
+
+    <!-- Background -->
+
+    <div class="bg-grid"></div>
+
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            OriginAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/" data-i18n="nav.home">Home</a>
+            <a href="/analyzer" data-i18n="nav.analyzer">Analyzer</a>
+            <a href="/dashboard" data-i18n="nav.dashboard">Dashboard</a>
+            <a href="/investor-report" data-i18n="nav.investor_report">Investor Report</a>
+            <a href="/pitchdeck" data-i18n="nav.pitchdeck">Pitch Deck</a>
+
+        </div>
+
+        <div class="lang-selector">
+            <select id="langSelector" aria-label="Language selector">
+                <option value="en">English</option>
+                <option value="hi">हिन्दी</option>
+                <option value="te">తెలుగు</option>
+                <option value="ta">தமிழ்</option>
+            </select>
+        </div>
+
+    </nav>
+
+    <!-- Header -->
+
+    <section class="dashboard-header">
+
+        <div class="section-tag" data-i18n="dashboard.intelligence_tag">Intelligence Dashboard</div>
+
+        <h1 data-i18n="dashboard.header_h1">Opportunity Intelligence Center</h1>
+
+        <p data-i18n="dashboard.header_p">AI-generated startup opportunities,
+            market intelligence,
+            and investor insights.</p>
+
+    </section>
+
+    <!-- Main Dashboard -->
+
+    <section class="dashboard-grid">
+
+        <!-- Score -->
+
+        <div class="card score-card">
+
+            <h3 data-i18n="opportunity.score">Opportunity Score</h3>
+
+            <div class="score-ring">
+
+                <svg width="220"
+                     height="220">
+
+                    <circle
+                        cx="110"
+                        cy="110"
+                        r="90"
+                        class="ring-bg">
+                    </circle>
+
+                    <circle
+                        cx="110"
+                        cy="110"
+                        r="90"
+                        class="ring-progress">
+                    </circle>
+
+                </svg>
+
+                <div class="score-value" id="score">--</div>
+
+            </div>
+
+        </div>
+
+        <!-- Startup -->
+     <div class="card">
+
+    <h3 data-i18n="dashboard.startup_title">
+        Generated Startup
+    </h3>
+
+    <div
+        class="startup-name"
+        id="startup-name"
+    >
+        Loading...
+    </div>
+
+    <p data-i18n="dashboard.startup_description">
+        AI-powered opportunity generated
+        from research analysis.
+    </p>
+
+</div>
+        
+
+        <!-- Industry -->
+
+        <div class="card">
+
+            <h3 data-i18n="dashboard.industry_title">
+                Industry
+            </h3>
+
+            <div
+    class="industry"
+    id="industry"
+>
+    Loading...
+</div>
+        </div>
+
+        <!-- Innovation -->
+
+        <div class="card">
+
+            <h3 data-i18n="dashboard.innovation_title">
+                Innovation Score
+            </h3>
+
+            <div class="metric-value" id="innovation-score">
+                -- / 100
+            </div>
+
+        </div>
+
+        <!-- Feasibility -->
+
+        <div class="card">
+
+            <h3 data-i18n="dashboard.feasibility_title">
+                Feasibility
+            </h3>
+
+            <div class="metric-value" id="funding-readiness">
+                -- / 100
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Analysis Overview -->
+
+    <section class="analysis-section">
+
+        <div class="card">
+
+            <h3 data-i18n="dashboard.analysis_research_summary_title">Research Summary</h3>
+            <p id="summary-text" data-i18n="dashboard.analysis_research_summary_text">Upload a PDF to reveal the research summary.</p>
+
+        </div>
+
+        <div class="card">
+
+            <h3 data-i18n="dashboard.analysis_key_discovery_title">Key Discovery</h3>
+            <p id="discovery-text" data-i18n="dashboard.analysis_key_discovery_text">Insights will appear here after analysis.</p>
+
+        </div>
+
+        <div class="card">
+
+            <h3 data-i18n="dashboard.analysis_commercial_potential_title">Commercial Potential</h3>
+            <div class="metric-value" id="commercial-potential">--</div>
+
+        </div>
+
+        <div class="card">
+
+            <h3 data-i18n="dashboard.analysis_risk_score_title">Risk Score</h3>
+            <div class="metric-value" id="risk-score">--</div>
+
+        </div>
+
+    </section>
+
+    <section class="dashboard-actions">
+        <div class="card action-card">
+            <h3 data-i18n="dashboard.report_ready_title">Investor Report Ready</h3>
+            <p data-i18n="dashboard.report_ready_description">Use the latest research analysis to generate the full investor report without extra scrolling.</p>
+            <button class="btn-primary" onclick="window.location.href='/investor-report'" data-i18n="btn.generate_investor_report">Generate Investor Report</button>
+        </div>
+    </section>
+
+    <!-- Startup Feed -->
+
+    <section class="feed-section">
+
+        <h2 data-i18n="dashboard.feed_title">
+            Generated Opportunities
+        </h2>
+
+        <div class="feed-grid" id="opportunity-feed">
+
+            <div class="feed-card">
+                <h3 data-i18n="feed.upload_prompt">Upload a research paper to begin</h3>
+                <span data-i18n="feed.real_analysis">Real analysis will appear here.</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Revenue Forecast -->
+
+    <section class="forecast-section">
+
+        <h2>
+            Revenue Forecast
+        </h2>
+
+        <div class="forecast-card">
+
+            <div class="forecast-bars">
+
+                <div class="bar b1">
+                    <span>$0.8M</span>
+                </div>
+
+                <div class="bar b2">
+                    <span>$2.4M</span>
+                </div>
+
+                <div class="bar b3">
+                    <span>$6.8M</span>
+                </div>
+
+                <div class="bar b4">
+                    <span>$14.2M</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Investor Metrics -->
+
+    <section class="metrics-section">
+
+        <div class="metric-card">
+
+            <h3>TAM</h3>
+
+            <span id="tam-value">--</span>
+
+        </div>
+
+        <div class="metric-card">
+
+            <h3>SAM</h3>
+
+            <span id="sam-value">--</span>
+
+        </div>
+
+        <div class="metric-card">
+
+            <h3>Competition</h3>
+
+            <span id="competition-value">--</span>
+
+        </div>
+
+        <div class="metric-card">
+
+            <h3>Risk</h3>
+
+            <span id="risk-value">--</span>
+
+        </div>
+
+    </section>
+
+    <section class="intelligence-section">
+
+        <div class="card">
+            <h3>Revenue Model</h3>
+            <p id="revenue-model">Business model details will populate here.</p>
+        </div>
+
+        <div class="card">
+            <h3>Technology Readiness</h3>
+            <div class="metric-value" id="tech-readiness">-- / 10</div>
+        </div>
+
+        <div class="card">
+            <h3>Commercialization Readiness</h3>
+            <div class="metric-value" id="commercialization-readiness-score">-- / 100</div>
+        </div>
+
+        <div class="card">
+            <h3>Funding Readiness</h3>
+            <div class="metric-value" id="funding-readiness-score">-- / 100</div>
+        </div>
+
+        <div class="card">
+            <h3>Investor Interest</h3>
+            <div class="metric-value" id="investor-interest-score">-- / 100</div>
+        </div>
+
+        <div class="card">
+            <h3>Market Timing</h3>
+            <div class="metric-value" id="market-timing-score">-- / 100</div>
+        </div>
+
+        <div class="card">
+            <h3>Startup Success Probability</h3>
+            <div class="metric-value" id="startup-success-probability">--</div>
+        </div>
+
+        <div class="card">
+            <h3>Unicorn Potential</h3>
+            <div class="metric-value" id="unicorn-potential-score">-- / 100</div>
+        </div>
+
+    </section>
+
+    <section class="history-section">
+
+        <h2>Recent Analyses</h2>
+        <div class="history-list" id="recent-analyses">
+            <p>No analyses available yet. Upload a PDF to begin.</p>
+        </div>
+
+    </section>
+
+    <script src="/static/js/i18n.js"></script>
+    <script src="/static/js/dashboard.js"></script>
+
+</body>
+
+</html>

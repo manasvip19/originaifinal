@@ -1,0 +1,550 @@
+/* ===========================
+   ROOT
+=========================== */
+
+:root{
+
+    --bg:#050816;
+    --surface:rgba(255,255,255,.05);
+    --border:rgba(255,255,255,.08);
+
+    --primary:#00F5D4;
+    --secondary:#7C3AED;
+    --accent:#00D9FF;
+
+    --white:#ffffff;
+    --muted:#9CA3AF;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:var(--bg);
+    color:white;
+
+    font-family:'Inter',sans-serif;
+
+    overflow-x:hidden;
+}
+
+/* ===========================
+   BACKGROUND
+=========================== */
+
+.bg-grid{
+
+    position:fixed;
+    inset:0;
+
+    background-image:
+    linear-gradient(
+        rgba(255,255,255,.03) 1px,
+        transparent 1px
+    ),
+    linear-gradient(
+        90deg,
+        rgba(255,255,255,.03) 1px,
+        transparent 1px
+    );
+
+    background-size:60px 60px;
+
+    z-index:-5;
+}
+
+.aurora{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(150px);
+
+    opacity:.15;
+
+    z-index:-4;
+}
+
+.aurora-1{
+
+    width:600px;
+    height:600px;
+
+    background:var(--primary);
+
+    left:-200px;
+    top:-100px;
+}
+
+.aurora-2{
+
+    width:700px;
+    height:700px;
+
+    background:var(--secondary);
+
+    right:-200px;
+    bottom:-200px;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+.navbar{
+
+    position:fixed;
+
+    width:100%;
+
+    top:0;
+
+    padding:25px 7%;
+
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+    backdrop-filter:blur(20px);
+
+    background:
+    rgba(5,8,22,.7);
+
+    border-bottom:
+    1px solid var(--border);
+
+    z-index:999;
+}
+
+.logo{
+
+    font-size:1.4rem;
+
+    font-weight:700;
+
+    font-family:
+    'Space Grotesk',
+    sans-serif;
+}
+
+.nav-links{
+
+    display:flex;
+    gap:35px;
+}
+
+.nav-links a{
+
+    color:var(--muted);
+
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.nav-links a:hover{
+
+    color:white;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.dashboard-header{
+
+    padding:
+    180px
+    7%
+    100px;
+
+    text-align:center;
+}
+
+.section-tag{
+
+    display:inline-block;
+
+    padding:
+    10px
+    18px;
+
+    border-radius:999px;
+
+    background:
+    rgba(255,255,255,.05);
+
+    border:
+    1px solid var(--border);
+
+    color:var(--primary);
+
+    margin-bottom:25px;
+}
+
+.dashboard-header h1{
+
+    font-size:4rem;
+
+    font-family:
+    'Space Grotesk',
+    sans-serif;
+
+    margin-bottom:20px;
+}
+
+.dashboard-header p{
+
+    color:var(--muted);
+
+    max-width:700px;
+
+    margin:auto;
+
+    line-height:1.8;
+}
+
+/* ===========================
+   DASHBOARD GRID
+=========================== */
+
+.dashboard-grid{
+
+    padding:0 7%;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+}
+
+.card{
+
+    background:
+    rgba(255,255,255,.05);
+
+    border:
+    1px solid var(--border);
+
+    backdrop-filter:
+    blur(20px);
+
+    border-radius:26px;
+
+    padding:30px;
+
+    transition:.4s;
+}
+
+.card:hover{
+
+    transform:
+    translateY(-8px);
+
+    box-shadow:
+    0 0 35px rgba(0,245,212,.18);
+}
+
+.score-card{
+
+    grid-row:
+    span 2;
+
+    text-align:center;
+}
+
+.score-ring{
+
+    margin-top:20px;
+
+    position:relative;
+}
+
+.ring-bg{
+
+    fill:none;
+
+    stroke:
+    rgba(255,255,255,.08);
+
+    stroke-width:12;
+}
+
+.ring-progress{
+
+    fill:none;
+
+    stroke:var(--primary);
+
+    stroke-width:12;
+
+    stroke-linecap:round;
+
+    stroke-dasharray:565;
+
+    stroke-dashoffset:34;
+
+    transform:
+    rotate(-90deg);
+
+    transform-origin:center;
+
+    filter:
+    drop-shadow(
+        0 0 15px var(--primary)
+    );
+}
+
+.score-value{
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:
+    translate(-50%,-50%);
+
+    font-size:4rem;
+
+    font-weight:700;
+
+    color:var(--primary);
+}
+
+.big-number{
+
+    font-size:3rem;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+    margin-top:15px;
+}
+
+.growth{
+
+    color:#22c55e;
+
+    margin-top:10px;
+}
+
+.startup-name,
+.industry,
+.metric-value{
+
+    font-size:1.7rem;
+
+    margin-top:15px;
+
+    color:var(--primary);
+}
+
+/* ===========================
+   FEED
+=========================== */
+
+.feed-section{
+
+    padding:120px 7%;
+}
+
+.feed-section h2{
+
+    margin-bottom:40px;
+}
+
+.feed-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:20px;
+}
+
+.feed-card{
+
+    padding:25px;
+
+    border-radius:22px;
+
+    background:
+    rgba(255,255,255,.05);
+
+    border:
+    1px solid var(--border);
+
+    transition:.3s;
+}
+
+.feed-card:hover{
+
+    transform:
+    translateY(-6px);
+}
+
+.feed-card span{
+
+    color:var(--muted);
+}
+
+/* ===========================
+   FORECAST
+=========================== */
+
+.forecast-section{
+
+    padding:0 7% 120px;
+}
+
+.forecast-card{
+
+    padding:50px;
+
+    border-radius:26px;
+
+    background:
+    rgba(255,255,255,.05);
+
+    border:
+    1px solid var(--border);
+}
+
+.forecast-bars{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:25px;
+
+    height:300px;
+
+    margin-top:40px;
+}
+
+.bar{
+
+    flex:1;
+
+    border-radius:
+    18px 18px 0 0;
+
+    background:
+    linear-gradient(
+        var(--primary),
+        var(--secondary)
+    );
+
+    position:relative;
+}
+
+.bar span{
+
+    position:absolute;
+
+    top:-35px;
+
+    left:50%;
+
+    transform:
+    translateX(-50%);
+}
+
+.b1{height:20%;}
+.b2{height:40%;}
+.b3{height:70%;}
+.b4{height:100%;}
+
+/* ===========================
+   METRICS
+=========================== */
+
+.metrics-section{
+
+    padding:0 7% 120px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:25px;
+}
+
+.metric-card{
+
+    text-align:center;
+
+    padding:30px;
+
+    border-radius:22px;
+
+    background:
+    rgba(255,255,255,.05);
+
+    border:
+    1px solid var(--border);
+}
+
+.metric-card span{
+
+    display:block;
+
+    margin-top:15px;
+
+    font-size:2rem;
+
+    color:var(--primary);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+    .dashboard-grid{
+
+        grid-template-columns:
+        1fr;
+    }
+
+    .feed-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .metrics-section{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+}
+
+@media(max-width:768px){
+
+    .feed-grid,
+    .metrics-section{
+
+        grid-template-columns:
+        1fr;
+    }
+
+    .dashboard-header h1{
+
+        font-size:2.5rem;
+    }
+}

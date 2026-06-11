@@ -1,0 +1,37 @@
+stages:
+  - lint
+  - type_check
+  - test
+  - coverage
+  - security
+
+lint:
+  stage: lint
+  script:
+    - pip install ruff
+    - ruff check .
+
+type_check:
+  stage: type_check
+  script:
+    - pip install mypy
+    - mypy .
+
+test:
+  stage: test
+  script:
+    - pip install pytest
+    - pytest
+
+coverage:
+  stage: coverage
+  script:
+    - pip install pytest pytest-cov
+    - pytest --cov=. --cov-report=xml
+
+security:
+  stage: security
+  script:
+    - pip install pip-audit bandit
+    - pip-audit
+    - bandit -r .

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OriginAI | Investor Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <div class="bg-grid"></div>
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+
+    <nav class="navbar">
+        <div class="logo">OriginAI</div>
+        <div class="nav-links">
+            <a href="/" data-i18n="nav.home">Home</a>
+            <a href="/analyzer" data-i18n="nav.analyzer">Analyzer</a>
+            <a href="/dashboard" data-i18n="nav.dashboard">Dashboard</a>
+            <a href="/investor-report" data-i18n="nav.investor_report">Investor Report</a>
+            <a href="/pitchdeck" data-i18n="nav.pitchdeck">Pitch Deck</a>
+        </div>
+        <div class="lang-selector">
+            <select id="langSelector" aria-label="Language selector">
+                <option value="en">English</option>
+                <option value="hi">हिन्दी</option>
+                <option value="te">తెలుగు</option>
+                <option value="ta">தமிழ்</option>
+            </select>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge" data-i18n="investor.hero_badge">Investor Report</div>
+        <h1 data-i18n="investor.h1">Investor Intelligence and Commercial Opportunity</h1>
+        <p data-i18n="investor.p">Review research-driven venture potential with a complete investor-ready report, risks and go-to-market guidance.</p>
+    </section>
+
+    <section class="report-actions">
+        <button class="btn-primary" onclick="printReport()" data-i18n="investor.print">Print Investor Report</button>
+        <button class="btn-secondary" onclick="exportReportPdf()" data-i18n="investor.download_pdf">Download Investor Report</button>
+        <button class="btn-secondary" onclick="downloadAnalysis()" data-i18n="investor.export_json">Export Analysis JSON</button>
+        <button class="btn-secondary" onclick="downloadStartupSummary()" data-i18n="investor.export_startup">Export Startup Summary</button>
+        <button class="btn-primary" onclick="window.location.href='/pitchdeck'" data-i18n="investor.view_deck">View Pitch Deck</button>
+    </section>
+
+    <section id="investor-report" class="report-grid">
+        <div class="card">
+            <h3 data-i18n="investor.summary_title">Executive Summary</h3>
+            <p id="executive-summary" data-i18n="investor.summary_text">Loading investor insights...</p>
+        </div>
+        <div class="card">
+            <h3 data-i18n="investor.research_overview_title">Research Overview</h3>
+            <p id="research-overview" data-i18n="investor.research_overview_text">Loading research summary...</p>
+        </div>
+        <div class="card">
+            <h3 data-i18n="investor.key_discovery_title">Key Discovery</h3>
+            <p id="key-discovery" data-i18n="investor.key_discovery_text">Loading discovery details...</p>
+        </div>
+        <div class="card">
+            <h3 data-i18n="investor.startup_opportunity_title">Startup Opportunity</h3>
+            <p id="startup-opportunity" data-i18n="investor.startup_opportunity_text">Loading startup opportunity...</p>
+        </div>
+        <div class="card">
+            <h3 data-i18n="investor.problem_solved_title">Problem Solved</h3>
+            <p id="problem-solved" data-i18n="investor.problem_solved_text">Loading problem statement...</p>
+        </div>
+        <div class="card">
+            <h3 data-i18n="investor.solution_title">Solution</h3>
+            <p id="solution" data-i18n="investor.solution_text">Loading solution summary...</p>
+        </div>
+        <div class="card">
+            <h3 data-i18n="investor.industry_title">Industry</h3>
+            <p id="industry">--</p>
+        </div>
+        <div class="card">
+            <h3 data-i18n="investor.target_market_title">Target Market</h3>
+            <p id="target-market">--</p>
+        </div>
+        <div class="card">
+            <h3 data-i18n="investor.market_size_title">Market Size</h3>
+            <p id="market-size">--</p>
+        </div>
+        <div class="card">
+            <h3 data-i18n="investor.tam_title">TAM</h3>
+            <p id="tam">--</p>
+        </div>
+        <div class="card">
+            <h3 data-i18n="investor.sam_title">SAM</h3>
+            <p id="sam">--</p>
+        </div>
+        <div class="card">
+            <h3 data-i18n="investor.som_title">SOM</h3>
+            <p id="som">--</p>
+        </div>
+        <div class="card">
+            <h3 data-i18n="investor.business_model_title">Business Model</h3>
+            <p id="business-model">--</p>
+        </div>
+        <div class="card">
+            <h3 data-i18n="investor.revenue_model_title">Revenue Model</h3>
+            <p id="revenue-model">--</p>
+        </div>
+        <div class="card">
+            <h3 data-i18n="investor.go_to_market_strategy_title">Go-To-Market Strategy</h3>
+            <p id="go-to-market-plan">--</p>
+        </div>
+        <div class="card">
+            <h3 data-i18n="investor.competitive_landscape_title">Competitive Landscape</h3>
+            <p id="competition-analysis">--</p>
+        </div>
+        <div class="card">
+            <h3 data-i18n="investor.risk_analysis_title">Risk Analysis</h3>
+            <p id="risk-assessment">--</p>
+        </div>
+        <div class="card">
+            <h3 data-i18n="investor.technology_readiness_title">Technology Readiness</h3>
+            <p id="technology-readiness">--</p>
+        </div>
+        <div class="card">
+            <h3 data-i18n="investor.commercialization_readiness_title">Commercialization Readiness</h3>
+            <p id="commercialization-readiness">--</p>
+        </div>
+        <div class="card">
+            <h3 data-i18n="investor.funding_readiness_title">Funding Readiness</h3>
+            <p id="funding-readiness">--</p>
+        </div>
+        <div class="card">
+            <h3 data-i18n="investor.expected_roi_title">Expected ROI</h3>
+            <p id="expected-roi">--</p>
+        </div>
+        <div class="card">
+            <h3 data-i18n="investor.investment_recommendation_title">Investment Recommendation</h3>
+            <p id="investment-recommendation">--</p>
+        </div>
+        <div class="card">
+            <h3 data-i18n="investor.final_verdict_title">Final Verdict</h3>
+            <p id="final-verdict">--</p>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-k0adb4Tn7YdhPGW7lqitMNi3FMtxypxqT9y9W4cWIK2yL2Dee5lLxHkzFVKc4AQV5H3ZCee4v9Az0jcpI0f9kg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/static/js/i18n.js"></script>
+    <script src="/static/js/investor-report.js"></script>
+</body>
+</html>

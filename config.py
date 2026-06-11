@@ -1,0 +1,7 @@
+﻿APP_NAME = "OriginAI"
+
+MAX_UPLOAD_SIZE_MB = 10
+SUPPORTED_FILES = [
+    "pdf"
+]
+ALLOWED_EXTENSIONS = [".pdf"]

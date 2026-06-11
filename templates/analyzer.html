@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title.analyzer">OriginAI | Research Analyzer</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+      href="/static/css/analyzer.css">
+</head>
+
+<body>
+
+    <!-- Background Effects -->
+    <div class="bg-grid"></div>
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            OriginAI
+        </div>
+
+        <div class="nav-links">
+            <a href="/" data-i18n="nav.home">Home</a>
+            <a href="/analyzer" data-i18n="nav.analyzer">Analyzer</a>
+            <a href="/dashboard" data-i18n="nav.dashboard">Dashboard</a>
+            <a href="/investor-report" data-i18n="nav.investor_report">Investor Report</a>
+            <a href="/pitchdeck" data-i18n="nav.pitchdeck">Pitch Deck</a>
+        </div>
+
+        <div class="lang-selector">
+            <select id="langSelector" aria-label="Language selector">
+                <option value="en">English</option>
+                <option value="hi">हिन्दी</option>
+                <option value="te">తెలుగు</option>
+                <option value="ta">தமிழ்</option>
+            </select>
+        </div>
+
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-badge" data-i18n="hero.badge">
+            Research Commercialization Engine
+        </div>
+
+        <h1 data-i18n="analyzer.hero_h1">Transform Research Into
+            Startup Opportunities</h1>
+
+        <p data-i18n="analyzer.hero_p">Upload a research paper and discover
+            commercialization opportunities,
+            startup ideas and investor insights.</p>
+
+    </section>
+
+    <!-- UPLOAD -->
+
+    <section class="upload-section">
+
+        <div class="upload-card">
+
+            <div class="upload-icon">
+                📄
+            </div>
+
+            <h2 data-i18n="analyzer.upload_title">Upload Research Paper</h2>
+
+            <p id="uploadMessage" data-i18n="analyzer.upload_message">
+                Select a PDF research paper to begin intelligent analysis.
+            </p>
+
+            <input
+                type="file"
+                id="pdfUpload"
+                accept="application/pdf"
+                hidden>
+
+            <button
+                class="btn-primary"
+                onclick="document.getElementById('pdfUpload').click()"
+                data-i18n="analyzer.select_file">
+
+                Select File
+
+            </button>
+
+            <button
+                class="btn-primary"
+                id="analyzeBtn"
+                data-i18n="analyzer.analyze">
+
+                Analyze Research
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- PROCESSING -->
+
+    <section
+        class="processing-section"
+        id="processingSection">
+
+        <h2>
+            AI Analysis Pipeline
+        </h2>
+
+        <div class="process-container">
+
+            <div class="process-step" data-i18n="processing.reading">Reading Research Paper...</div>
+            <div class="process-step" data-i18n="processing.extracting">Extracting Discoveries...</div>
+            <div class="process-step" data-i18n="processing.mapping">Mapping Industries...</div>
+            <div class="process-step" data-i18n="processing.generating">Generating Startup...</div>
+            <div class="process-step" data-i18n="processing.market_analysis">Market Analysis...</div>
+            <div class="process-step" data-i18n="processing.build_report">Building Investor Report...</div>
+
+        </div>
+
+    </section>
+
+    <!-- RESULTS -->
+
+    <section
+        class="results-section"
+        id="resultsSection">
+
+        <div class="section-title" data-i18n="results.title">
+
+            Analysis Results
+
+        </div>
+
+        <div class="results-grid">
+
+            <div class="result-card">
+                <h3 data-i18n="analyzer.result_research_summary_title">Research Summary</h3>
+                <p id="summary-text" data-i18n="analyzer.result_research_summary_text">Upload a PDF to view the summed research overview.</p>
+            </div>
+
+            <div class="result-card">
+                <h3 data-i18n="analyzer.result_key_discovery_title">Key Discovery</h3>
+                <p id="discovery-text" data-i18n="analyzer.result_key_discovery_text">The main innovation will appear here after analysis.</p>
+            </div>
+
+            <div class="result-card">
+                <h3 data-i18n="analyzer.result_industry_match_title">Industry Match</h3>
+                <p id="industry" data-i18n="analyzer.result_industry_match_text">Industry alignment will appear here.</p>
+            </div>
+
+            <div class="result-card">
+                <h3 data-i18n="analyzer.result_startup_opportunity_title">Startup Opportunity</h3>
+                <p id="startup-name" data-i18n="analyzer.result_startup_opportunity_text">A research-driven startup concept will appear here.</p>
+            </div>
+
+            <div class="result-card">
+                <h3 data-i18n="analyzer.result_market_size_title">Market Size</h3>
+                <p id="market-size">--</p>
+            </div>
+
+            <div class="result-card">
+                <h3 data-i18n="analyzer.result_tam_sam_som_title">TAM / SAM / SOM</h3>
+                <p id="market-tam">--</p>
+                <p id="market-sam">--</p>
+                <p id="market-som">--</p>
+            </div>
+
+            <div class="result-card">
+                <h3 data-i18n="analyzer.result_revenue_model_title">Revenue Model</h3>
+                <p id="revenue-model">--</p>
+            </div>
+
+            <div class="result-card">
+                <h3 data-i18n="analyzer.result_risk_assessment_title">Risk Assessment</h3>
+                <p id="risk-score">--</p>
+            </div>
+
+            <div class="result-card">
+                <h3 data-i18n="analyzer.result_investor_interest_title">Investor Interest</h3>
+                <p id="investor-interest">--</p>
+            </div>
+
+            <div class="result-card">
+                <h3 data-i18n="analyzer.result_funding_readiness_title">Funding Readiness</h3>
+                <p id="funding-readiness">--</p>
+            </div>
+
+        </div>
+
+        <div class="results-actions">
+            <button class="btn-secondary" onclick="window.location.href='/dashboard'" data-i18n="results.view_dashboard">View Dashboard</button>
+            <button class="btn-primary" onclick="window.location.href='/investor-report'" data-i18n="results.open_report">Open Investor Report</button>
+        </div>
+
+    </section>
+
+    <!-- SCORE -->
+
+    <section class="score-section">
+
+        <div class="score-card">
+
+            <h2>
+                Opportunity Score
+            </h2>
+
+            <div class="score-ring">
+
+                <svg width="260" height="260">
+
+                    <circle
+                        cx="130"
+                        cy="130"
+                        r="100"
+                        class="ring-bg">
+                    </circle>
+
+                    <circle
+                        cx="130"
+                        cy="130"
+                        r="100"
+                        class="ring-progress">
+                    </circle>
+
+                </svg>
+
+                <div class="score-value">
+                    --
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- INVESTOR INSIGHTS -->
+
+    <section class="investor-section">
+
+        <div class="section-title">
+
+            Investor Intelligence
+
+        </div>
+
+        <div class="investor-grid">
+
+            <div class="insight-card">
+
+                <h3>Market Size</h3>
+
+                <span>--</span>
+
+            </div>
+
+            <div class="insight-card">
+
+                <h3>Innovation</h3>
+
+                <span>-- / 100</span>
+
+            </div>
+
+            <div class="insight-card">
+
+                <h3>Feasibility</h3>
+
+                <span>-- / 100</span>
+
+            </div>
+
+            <div class="insight-card">
+
+                <h3>Scalability</h3>
+
+                <span>-- / 100</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="/static/js/i18n.js"></script>
+    <script src="/static/js/analyzer.js"></script>
+
+</body>
+
+</html>
