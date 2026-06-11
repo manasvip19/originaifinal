@@ -5,3 +5,6 @@ python-multipart
 python-dotenv
 openai
 pymupdf
+openai
+google-generativeai
+requests
