@@ -1,6 +1,6 @@
 before_script:
-  - py --version
-  - py -m pip --version
+  - '& "C:\Users\MANASVI_P\AppData\Local\Programs\Python\Python314\python.exe" --version'
+  - '& "C:\Users\MANASVI_P\AppData\Local\Programs\Python\Python314\python.exe" -m pip --version'
 
 stages:
   - lint
@@ -12,30 +12,30 @@ stages:
 lint:
   stage: lint
   script:
-    - py -m pip install ruff
-    - py -m ruff check .
+    - '& "C:\Users\MANASVI_P\AppData\Local\Programs\Python\Python314\python.exe" -m pip install ruff'
+    - '& "C:\Users\MANASVI_P\AppData\Local\Programs\Python\Python314\python.exe" -m ruff check .'
 
 type_check:
   stage: type_check
   script:
-    - py -m pip install mypy
-    - py -m mypy .
+    - '& "C:\Users\MANASVI_P\AppData\Local\Programs\Python\Python314\python.exe" -m pip install mypy'
+    - '& "C:\Users\MANASVI_P\AppData\Local\Programs\Python\Python314\python.exe" -m mypy .'
 
 test:
   stage: test
   script:
-    - py -m pip install pytest
-    - py -m pytest
+    - '& "C:\Users\MANASVI_P\AppData\Local\Programs\Python\Python314\python.exe" -m pip install pytest'
+    - '& "C:\Users\MANASVI_P\AppData\Local\Programs\Python\Python314\python.exe" -m pytest'
 
 coverage:
   stage: coverage
   script:
-    - py -m pip install pytest pytest-cov
-    - py -m pytest --cov=. --cov-report=xml
+    - '& "C:\Users\MANASVI_P\AppData\Local\Programs\Python\Python314\python.exe" -m pip install pytest pytest-cov'
+    - '& "C:\Users\MANASVI_P\AppData\Local\Programs\Python\Python314\python.exe" -m pytest --cov=. --cov-report=xml'
 
 security:
   stage: security
   script:
-    - py -m pip install pip-audit bandit
-    - py -m pip_audit
-    - py -m bandit -r .
+    - '& "C:\Users\MANASVI_P\AppData\Local\Programs\Python\Python314\python.exe" -m pip install pip-audit bandit'
+    - '& "C:\Users\MANASVI_P\AppData\Local\Programs\Python\Python314\python.exe" -m pip_audit'
+    - '& "C:\Users\MANASVI_P\AppData\Local\Programs\Python\Python314\python.exe" -m bandit -r .'
