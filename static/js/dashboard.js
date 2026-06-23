@@ -32,11 +32,11 @@ async function loadAnalysis() {
     const scores = analysis.scores || {};
 
     const mappings = [
-        { id: "startup-name", value: startup.name || ((window.i18n && typeof i18n.t === 'function') ? i18n.t('dashboard.default_research_opportunity') : "Research Opportunity") },
-        { id: "industry", value: analysis.industry || ((window.i18n && typeof i18n.t === 'function') ? i18n.t('dashboard.default_industry') : "Technology") },
+        { id: "startup-name", value: startup.name || "Research Opportunity" },
+        { id: "industry", value: analysis.industry || "Technology" },
         { id: "score", value: scores.investment_score || 0 },
-        { id: "summary-text", value: analysis.research_summary || ((window.i18n && typeof i18n.t === 'function') ? i18n.t('dashboard.default_summary') : "Research summary will appear here after analysis.") },
-        { id: "discovery-text", value: analysis.key_discovery || ((window.i18n && typeof i18n.t === 'function') ? i18n.t('dashboard.default_discovery') : "Key discovery will appear here.") },
+        { id: "summary-text", value: analysis.research_summary || "Research summary will appear here after analysis." },
+        { id: "discovery-text", value: analysis.key_discovery || "Key discovery will appear here." },
         { id: "commercial-potential", value: `${scores.commercial_potential || 0} / 100` },
         { id: "risk-score", value: `Risk score: ${scores.risk_score || "--"}` },
         { id: "revenue-model", value: startup.revenue_streams ? startup.revenue_streams.join(", ") : startup.business_model || "--" },
@@ -194,7 +194,3 @@ cards.forEach(card => {
 
 loadAnalysis();
 loadHistory();
-document.addEventListener('i18n:changed', () => {
-    loadAnalysis();
-    loadHistory();
-});

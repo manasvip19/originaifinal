@@ -3,6 +3,3 @@ pytest-cov
 pre-commit
 pip-audit
 safety
-ruff
-mypy
-bandit

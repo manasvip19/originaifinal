@@ -17,42 +17,33 @@
     <nav class="navbar">
         <div class="logo">OriginAI</div>
         <div class="nav-links">
-            <a href="/" data-i18n="nav.home">Home</a>
-            <a href="/analyzer" data-i18n="nav.analyzer">Analyzer</a>
-            <a href="/dashboard" data-i18n="nav.dashboard">Dashboard</a>
-            <a href="/investor-report" data-i18n="nav.investor_report">Investor Report</a>
-            <a href="/pitchdeck" data-i18n="nav.pitchdeck">Pitch Deck</a>
-        </div>
-        <div class="lang-selector">
-            <select id="langSelector" aria-label="Language selector">
-                <option value="en">English</option>
-                <option value="hi">हिन्दी</option>
-                <option value="te">తెలుగు</option>
-                <option value="ta">தமிழ்</option>
-            </select>
+            <a href="/">Home</a>
+            <a href="/analyzer">Analyzer</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/investor-report">Investor Report</a>
+            <a href="/pitchdeck">Pitch Deck</a>
         </div>
     </nav>
 
     <section class="hero">
-        <div class="hero-badge" data-i18n="pitchdeck.hero_badge">Pitch Deck</div>
-        <h1 data-i18n="pitchdeck.h1">Investor-ready pitch deck generated from research analysis</h1>
-        <p data-i18n="pitchdeck.p">Review high-impact slides that cover problem, solution, market, competition and funding needs.</p>
+        <div class="hero-badge">Pitch Deck</div>
+        <h1>Investor-ready pitch deck generated from research analysis</h1>
+        <p>Review high-impact slides that cover problem, solution, market, competition and funding needs.</p>
     </section>
 
     <section class="report-actions">
-        <button class="btn-primary" onclick="printDeck()" data-i18n="btn.print_deck">Print Pitch Deck</button>
-        <button class="btn-secondary" onclick="downloadPitchDeck()" data-i18n="btn.download_deck">Download Deck</button>
-        <button class="btn-primary" onclick="window.location.href='/investor-report'" data-i18n="btn.back_to_report">Back to Report</button>
+        <button class="btn-primary" onclick="printDeck()">Print Pitch Deck</button>
+        <button class="btn-secondary" onclick="downloadPitchDeck()">Download Deck</button>
+        <button class="btn-primary" onclick="window.location.href='/investor-report'">Back to Report</button>
     </section>
 
     <section class="deck-grid" id="deck-slides">
         <div class="card">
-            <h3 data-i18n="pitchdeck.loading">Loading pitch deck...</h3>
+            <h3>Loading pitch deck...</h3>
         </div>
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-k0adb4Tn7YdhPGW7lqitMNi3FMtxypxqT9y9W4cWIK2yL2Dee5lLxHkzFVKc4AQV5H3ZCee4v9Az0jcpI0f9kg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="/static/js/i18n.js"></script>
     <script src="/static/js/pitchdeck.js"></script>
 </body>
 </html>

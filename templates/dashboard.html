@@ -36,21 +36,12 @@
 
         <div class="nav-links">
 
-            <a href="/" data-i18n="nav.home">Home</a>
-            <a href="/analyzer" data-i18n="nav.analyzer">Analyzer</a>
-            <a href="/dashboard" data-i18n="nav.dashboard">Dashboard</a>
-            <a href="/investor-report" data-i18n="nav.investor_report">Investor Report</a>
-            <a href="/pitchdeck" data-i18n="nav.pitchdeck">Pitch Deck</a>
+            <a href="/">Home</a>
+            <a href="/analyzer">Analyzer</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/investor-report">Investor Report</a>
+            <a href="/pitchdeck">Pitch Deck</a>
 
-        </div>
-
-        <div class="lang-selector">
-            <select id="langSelector" aria-label="Language selector">
-                <option value="en">English</option>
-                <option value="hi">हिन्दी</option>
-                <option value="te">తెలుగు</option>
-                <option value="ta">தமிழ்</option>
-            </select>
         </div>
 
     </nav>
@@ -59,13 +50,19 @@
 
     <section class="dashboard-header">
 
-        <div class="section-tag" data-i18n="dashboard.intelligence_tag">Intelligence Dashboard</div>
+        <div class="section-tag">
+            Intelligence Dashboard
+        </div>
 
-        <h1 data-i18n="dashboard.header_h1">Opportunity Intelligence Center</h1>
+        <h1>
+            Opportunity Intelligence Center
+        </h1>
 
-        <p data-i18n="dashboard.header_p">AI-generated startup opportunities,
+        <p>
+            AI-generated startup opportunities,
             market intelligence,
-            and investor insights.</p>
+            and investor insights.
+        </p>
 
     </section>
 
@@ -77,7 +74,9 @@
 
         <div class="card score-card">
 
-            <h3 data-i18n="opportunity.score">Opportunity Score</h3>
+            <h3>
+                Opportunity Score
+            </h3>
 
             <div class="score-ring">
 
@@ -109,7 +108,7 @@
         <!-- Startup -->
      <div class="card">
 
-    <h3 data-i18n="dashboard.startup_title">
+    <h3>
         Generated Startup
     </h3>
 
@@ -120,7 +119,7 @@
         Loading...
     </div>
 
-    <p data-i18n="dashboard.startup_description">
+    <p>
         AI-powered opportunity generated
         from research analysis.
     </p>
@@ -132,7 +131,7 @@
 
         <div class="card">
 
-            <h3 data-i18n="dashboard.industry_title">
+            <h3>
                 Industry
             </h3>
 
@@ -148,7 +147,7 @@
 
         <div class="card">
 
-            <h3 data-i18n="dashboard.innovation_title">
+            <h3>
                 Innovation Score
             </h3>
 
@@ -162,7 +161,7 @@
 
         <div class="card">
 
-            <h3 data-i18n="dashboard.feasibility_title">
+            <h3>
                 Feasibility
             </h3>
 
@@ -180,28 +179,28 @@
 
         <div class="card">
 
-            <h3 data-i18n="dashboard.analysis_research_summary_title">Research Summary</h3>
-            <p id="summary-text" data-i18n="dashboard.analysis_research_summary_text">Upload a PDF to reveal the research summary.</p>
+            <h3>Research Summary</h3>
+            <p id="summary-text">Upload a PDF to reveal the research summary.</p>
 
         </div>
 
         <div class="card">
 
-            <h3 data-i18n="dashboard.analysis_key_discovery_title">Key Discovery</h3>
-            <p id="discovery-text" data-i18n="dashboard.analysis_key_discovery_text">Insights will appear here after analysis.</p>
+            <h3>Key Discovery</h3>
+            <p id="discovery-text">Insights will appear here after analysis.</p>
 
         </div>
 
         <div class="card">
 
-            <h3 data-i18n="dashboard.analysis_commercial_potential_title">Commercial Potential</h3>
+            <h3>Commercial Potential</h3>
             <div class="metric-value" id="commercial-potential">--</div>
 
         </div>
 
         <div class="card">
 
-            <h3 data-i18n="dashboard.analysis_risk_score_title">Risk Score</h3>
+            <h3>Risk Score</h3>
             <div class="metric-value" id="risk-score">--</div>
 
         </div>
@@ -210,9 +209,9 @@
 
     <section class="dashboard-actions">
         <div class="card action-card">
-            <h3 data-i18n="dashboard.report_ready_title">Investor Report Ready</h3>
-            <p data-i18n="dashboard.report_ready_description">Use the latest research analysis to generate the full investor report without extra scrolling.</p>
-            <button class="btn-primary" onclick="window.location.href='/investor-report'" data-i18n="btn.generate_investor_report">Generate Investor Report</button>
+            <h3>Investor Report Ready</h3>
+            <p>Use the latest research analysis to generate the full investor report without extra scrolling.</p>
+            <button class="btn-primary" onclick="window.location.href='/investor-report'">Generate Investor Report</button>
         </div>
     </section>
 
@@ -220,15 +219,15 @@
 
     <section class="feed-section">
 
-        <h2 data-i18n="dashboard.feed_title">
+        <h2>
             Generated Opportunities
         </h2>
 
         <div class="feed-grid" id="opportunity-feed">
 
             <div class="feed-card">
-                <h3 data-i18n="feed.upload_prompt">Upload a research paper to begin</h3>
-                <span data-i18n="feed.real_analysis">Real analysis will appear here.</span>
+                <h3>Upload a research paper to begin</h3>
+                <span>Real analysis will appear here.</span>
             </div>
 
         </div>
@@ -360,7 +359,6 @@
 
     </section>
 
-    <script src="/static/js/i18n.js"></script>
     <script src="/static/js/dashboard.js"></script>
 
 </body>

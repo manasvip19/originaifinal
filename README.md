@@ -1,5 +1,6 @@
 #  OriginAI
-
+Version 1 Link:https://originai-dwli.onrender.com/
+Final Project Link:https://originaifinal.onrender.com/
 ### Transforming Research Into Startup Opportunities
 
 OriginAI is an AI-powered innovation intelligence platform that bridges the gap between academic research and industry by converting research discoveries into actionable startup opportunities.

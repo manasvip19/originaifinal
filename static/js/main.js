@@ -289,41 +289,55 @@ bars.forEach((bar, index) => {
 // RADAR DATA
 // ====================================
 
-const radarDataEnglish = {
-    "Healthcare": "Opportunities: 421 | Growth: +32%",
-    "Energy": "Opportunities: 302 | Growth: +28%",
-    "Agriculture": "Opportunities: 198 | Growth: +21%",
-    "Robotics": "Opportunities: 367 | Growth: +31%",
-    "FinTech": "Opportunities: 287 | Growth: +19%",
-    "ClimateTech": "Opportunities: 255 | Growth: +35%",
-    "Cybersecurity": "Opportunities: 314 | Growth: +27%",
-    "Education": "Opportunities: 176 | Growth: +16%"
+const radarData = {
+
+    "Healthcare":
+    "Opportunities: 421 | Growth: +32%",
+
+    "Energy":
+    "Opportunities: 302 | Growth: +28%",
+
+    "Agriculture":
+    "Opportunities: 198 | Growth: +21%",
+
+    "Robotics":
+    "Opportunities: 367 | Growth: +31%",
+
+    "FinTech":
+    "Opportunities: 287 | Growth: +19%",
+
+    "ClimateTech":
+    "Opportunities: 255 | Growth: +35%",
+
+    "Cybersecurity":
+    "Opportunities: 314 | Growth: +27%",
+
+    "Education":
+    "Opportunities: 176 | Growth: +16%"
 };
 
-const radarDataKeys = {
-    "Healthcare": "radar.Healthcare",
-    "Energy": "radar.Energy",
-    "Agriculture": "radar.Agriculture",
-    "Robotics": "radar.Robotics",
-    "FinTech": "radar.FinTech",
-    "ClimateTech": "radar.ClimateTech",
-    "Cybersecurity": "radar.Cybersecurity",
-    "Education": "radar.Education"
-};
+const radarNodes =
+document.querySelectorAll(".radar-node");
 
-const radarNodes = document.querySelectorAll(".radar-node");
-const industryName = document.getElementById("industryName");
-const industryStats = document.getElementById("industryStats");
+const industryName =
+document.getElementById("industryName");
+
+const industryStats =
+document.getElementById("industryStats");
 
 radarNodes.forEach(node => {
+
     node.addEventListener("mouseenter", () => {
-        const industry = node.innerText;
-        industryName.innerText = industry;
-        const key = radarDataKeys[industry];
-        if (window.i18n && typeof i18n.t === 'function') {
-            industryStats.innerText = i18n.t(key) || radarDataEnglish[industry] || '';
-        } else {
-            industryStats.innerText = radarDataEnglish[industry] || '';
-        }
+
+        const industry =
+        node.innerText;
+
+        industryName.innerText =
+        industry;
+
+        industryStats.innerText =
+        radarData[industry];
+
     });
+
 });
