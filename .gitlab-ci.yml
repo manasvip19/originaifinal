@@ -19,7 +19,7 @@ type_check:
   stage: type_check
   script:
     - '& "C:\Users\MANASVI_P\AppData\Local\Programs\Python\Python314\python.exe" -m pip install mypy'
-    - '& "C:\Users\MANASVI_P\AppData\Local\Programs\Python\Python314\python.exe" -m mypy .'
+    - '& "C:\Users\MANASVI_P\AppData\Local\Programs\Python\Python314\python.exe" -m mypy --explicit-package-bases .'
 
 test:
   stage: test
