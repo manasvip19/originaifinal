@@ -1,6 +1,4 @@
-import json
 import os
-
 from pdf_parser import extract_text, split_into_sections
 from services.ollama_provider import OllamaProvider
 
