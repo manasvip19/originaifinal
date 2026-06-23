@@ -1,3 +1,7 @@
+before_script:
+  - py --version
+  - py -m pip --version
+
 stages:
   - lint
   - type_check
@@ -8,30 +12,30 @@ stages:
 lint:
   stage: lint
   script:
-    - pip install ruff
-    - ruff check .
+    - py -m pip install ruff
+    - py -m ruff check .
 
 type_check:
   stage: type_check
   script:
-    - pip install mypy
-    - mypy .
+    - py -m pip install mypy
+    - py -m mypy .
 
 test:
   stage: test
   script:
-    - pip install pytest
-    - pytest
+    - py -m pip install pytest
+    - py -m pytest
 
 coverage:
   stage: coverage
   script:
-    - pip install pytest pytest-cov
-    - pytest --cov=. --cov-report=xml
+    - py -m pip install pytest pytest-cov
+    - py -m pytest --cov=. --cov-report=xml
 
 security:
   stage: security
   script:
-    - pip install pip-audit bandit
-    - pip-audit
-    - bandit -r .
+    - py -m pip install pip-audit bandit
+    - py -m pip_audit
+    - py -m bandit -r .
