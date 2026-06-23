@@ -2,16 +2,26 @@ import requests
 
 
 class OllamaProvider:
+    def __init__(
+        self,
+        model="llama3",
+        base_url="http://localhost:11434",
+    ):
+        self.model = model
+        self.base_url = base_url
 
     def generate(self, prompt):
-
         response = requests.post(
-            "http://localhost:11434/api/generate",
+            f"{self.base_url}/api/generate",
             json={
-                "model": "llama3",
+                "model": self.model,
                 "prompt": prompt,
-                "stream": False
-            }
+                "stream": False,
+            },
+            timeout=120,
         )
 
-        return response.json()["response"]
+        response.raise_for_status()
+        data = response.json()
+
+        return data.get("response", "")

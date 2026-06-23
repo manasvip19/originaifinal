@@ -1,23 +1,15 @@
+
 import google.generativeai as genai
 
+
 class GeminiProvider:
+    def __init__(self, api_key):
+        if not api_key:
+            raise ValueError("Gemini API key is required")
 
-```
-def __init__(self, api_key):
+        genai.configure(api_key=api_key)
+        self.model = genai.GenerativeModel("gemini-1.5-flash")
 
-    genai.configure(
-        api_key=api_key
-    )
-
-    self.model = genai.GenerativeModel(
-        "gemini-1.5-flash"
-    )
-
-def generate(self, prompt):
-
-    response = self.model.generate_content(
-        prompt
-    )
-
-    return response.text
-```
+    def generate(self, prompt):
+        response = self.model.generate_content(prompt)
+        return response.text

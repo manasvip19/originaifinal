@@ -1,7 +1,7 @@
 import os
 import fitz
 import pymupdf4llm
-
+import re
 
 def extract_text(pdf_path):
     """
@@ -39,7 +39,7 @@ def extract_text(pdf_path):
     except Exception:
         raise ValueError("Invalid or corrupted PDF")
 
-import re
+
 
 def split_into_sections(markdown_text):
 

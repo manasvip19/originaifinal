@@ -1,5 +1,4 @@
 import pymupdf4llm
-import json
 import re
 
 
