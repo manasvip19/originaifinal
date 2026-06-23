@@ -2,18 +2,22 @@ from pathlib import Path
 import os
 import uuid
 from datetime import datetime
-
+from pydantic import BaseModel
+from services.document_qa_service import DocumentQAService
 from dotenv import load_dotenv
 from fastapi import FastAPI, Request, UploadFile, File, HTTPException, status
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-
+import json
 import config
+from pdf_parser import extract_text, split_into_sections
 from workflow_manager import WorkflowManager
 from history_store import add_entry, latest_entry, all_entries
 
 load_dotenv()
+document_qa = DocumentQAService()
+workflow = WorkflowManager()
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -51,7 +55,6 @@ Path(UPLOAD_DIR).mkdir(exist_ok=True)
 MAX_BYTES = int(os.getenv("MAX_UPLOAD_SIZE_MB", config.MAX_UPLOAD_SIZE_MB)) * 1024 * 1024
 SUPPORTED_EXTENSIONS = config.ALLOWED_EXTENSIONS
 
-workflow = WorkflowManager()
 
 
 @app.post("/upload")
@@ -91,7 +94,22 @@ async def upload_pdf(file: UploadFile = File(...)):
             "stored_as": safe_name,
             "timestamp": datetime.utcnow().isoformat() + "Z",
             "analysis": results
-        }
+        } 
+        markdown = extract_text(file_path)
+
+        sections = split_into_sections(markdown)
+
+        with open(
+            f"{file_path}.sections.json",
+            "w",
+            encoding="utf-8"
+        ) as f:
+            json.dump(
+            sections,
+            f,
+            ensure_ascii=False
+          )
+
         add_entry(entry)
 
         return JSONResponse({
@@ -141,3 +159,32 @@ async def pitchdeck(request: Request):
         request=request,
         name="pitchdeck.html"
     )
+
+class DocumentQuestion(BaseModel):
+    filename: str
+    question: str
+
+
+@app.post("/documents/ask")
+async def ask_document(data: DocumentQuestion):
+
+    pdf_path = os.path.join(
+        UPLOAD_DIR,
+        data.filename
+    )
+
+    if not os.path.exists(pdf_path):
+        raise HTTPException(
+            status_code=404,
+            detail="Document not found"
+        )
+
+    answer = document_qa.ask(
+        pdf_path,
+        data.question
+    )
+
+    return {
+        "question": data.question,
+        "answer": answer
+    }
