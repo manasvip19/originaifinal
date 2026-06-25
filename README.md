@@ -424,3 +424,39 @@ MIT License
 ---
 
 #  Built to Transform Research Into Real-World Innovation
+
+## Privacy & Data Handling
+
+- User-uploaded research papers are processed only for generating analysis.
+- Sensitive API keys are stored in environment variables and never committed.
+- The project does not intentionally collect personal user information.
+- Users retain ownership of uploaded research documents.
+- The project follows responsible AI usage and encourages verification of generated outputs.
+
+## Device Compatibility
+
+OriginAI is a responsive web application that works on:
+
+- Windows
+- Linux
+- macOS
+
+Browsers:
+- Chrome
+- Firefox
+- Edge
+- Safari
+
+Mobile:
+- Android browsers
+- iOS Safari/Chrome
+
+## Performance
+
+OriginAI is optimized by:
+
+- Lightweight HTML/CSS interface
+- Minimal JavaScript
+- FastAPI backend
+- Efficient API requests
+- Responsive layout
