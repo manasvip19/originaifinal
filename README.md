@@ -423,3 +423,18 @@ MIT License
 ---
 
 #  Built to Transform Research Into Real-World Innovation
+
+## Documentation
+
+- README.md
+- CONTRIBUTING.md
+- CHANGELOG.md
+- ROADMAP.md
+- USER_FEEDBACK.md
+
+## Issue Templates
+
+- Bug Report
+- Feature Request
+- Documentation
+- Setup Help
