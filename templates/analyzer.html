@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OriginAI | Research Analyzer</title>
+    <title data-i18n="title.analyzer">OriginAI | Research Analyzer</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -28,11 +28,20 @@
         </div>
 
         <div class="nav-links">
-            <a href="/">Home</a>
-            <a href="/analyzer">Analyzer</a>
-            <a href="/dashboard">Dashboard</a>
-            <a href="/investor-report">Investor Report</a>
-            <a href="/pitchdeck">Pitch Deck</a>
+            <a href="/" data-i18n="nav.home">Home</a>
+            <a href="/analyzer" data-i18n="nav.analyzer">Analyzer</a>
+            <a href="/dashboard" data-i18n="nav.dashboard">Dashboard</a>
+            <a href="/investor-report" data-i18n="nav.investor_report">Investor Report</a>
+            <a href="/pitchdeck" data-i18n="nav.pitchdeck">Pitch Deck</a>
+        </div>
+
+        <div class="lang-selector">
+            <select id="langSelector" aria-label="Language selector">
+                <option value="en">English</option>
+                <option value="hi">हिन्दी</option>
+                <option value="te">తెలుగు</option>
+                <option value="ta">தமிழ்</option>
+            </select>
         </div>
 
     </nav>
@@ -41,20 +50,16 @@
 
     <section class="hero">
 
-        <div class="hero-badge">
+        <div class="hero-badge" data-i18n="hero.badge">
             Research Commercialization Engine
         </div>
 
-        <h1>
-            Transform Research Into
-            Startup Opportunities
-        </h1>
+        <h1 data-i18n="analyzer.hero_h1">Transform Research Into
+            Startup Opportunities</h1>
 
-        <p>
-            Upload a research paper and discover
+        <p data-i18n="analyzer.hero_p">Upload a research paper and discover
             commercialization opportunities,
-            startup ideas and investor insights.
-        </p>
+            startup ideas and investor insights.</p>
 
     </section>
 
@@ -68,9 +73,9 @@
                 📄
             </div>
 
-            <h2>Upload Research Paper</h2>
+            <h2 data-i18n="analyzer.upload_title">Upload Research Paper</h2>
 
-            <p id="uploadMessage">
+            <p id="uploadMessage" data-i18n="analyzer.upload_message">
                 Select a PDF research paper to begin intelligent analysis.
             </p>
 
@@ -82,7 +87,8 @@
 
             <button
                 class="btn-primary"
-                onclick="document.getElementById('pdfUpload').click()">
+                onclick="document.getElementById('pdfUpload').click()"
+                data-i18n="analyzer.select_file">
 
                 Select File
 
@@ -90,7 +96,8 @@
 
             <button
                 class="btn-primary"
-                id="analyzeBtn">
+                id="analyzeBtn"
+                data-i18n="analyzer.analyze">
 
                 Analyze Research
 
@@ -112,29 +119,12 @@
 
         <div class="process-container">
 
-            <div class="process-step">
-                Reading Research Paper...
-            </div>
-
-            <div class="process-step">
-                Extracting Discoveries...
-            </div>
-
-            <div class="process-step">
-                Mapping Industries...
-            </div>
-
-            <div class="process-step">
-                Generating Startup...
-            </div>
-
-            <div class="process-step">
-                Market Analysis...
-            </div>
-
-            <div class="process-step">
-                Building Investor Report...
-            </div>
+            <div class="process-step" data-i18n="processing.reading">Reading Research Paper...</div>
+            <div class="process-step" data-i18n="processing.extracting">Extracting Discoveries...</div>
+            <div class="process-step" data-i18n="processing.mapping">Mapping Industries...</div>
+            <div class="process-step" data-i18n="processing.generating">Generating Startup...</div>
+            <div class="process-step" data-i18n="processing.market_analysis">Market Analysis...</div>
+            <div class="process-step" data-i18n="processing.build_report">Building Investor Report...</div>
 
         </div>
 
@@ -146,7 +136,7 @@
         class="results-section"
         id="resultsSection">
 
-        <div class="section-title">
+        <div class="section-title" data-i18n="results.title">
 
             Analysis Results
 
@@ -155,62 +145,62 @@
         <div class="results-grid">
 
             <div class="result-card">
-                <h3>Research Summary</h3>
-                <p id="summary-text">Upload a PDF to view the summed research overview.</p>
+                <h3 data-i18n="analyzer.result_research_summary_title">Research Summary</h3>
+                <p id="summary-text" data-i18n="analyzer.result_research_summary_text">Upload a PDF to view the summed research overview.</p>
             </div>
 
             <div class="result-card">
-                <h3>Key Discovery</h3>
-                <p id="discovery-text">The main innovation will appear here after analysis.</p>
+                <h3 data-i18n="analyzer.result_key_discovery_title">Key Discovery</h3>
+                <p id="discovery-text" data-i18n="analyzer.result_key_discovery_text">The main innovation will appear here after analysis.</p>
             </div>
 
             <div class="result-card">
-                <h3>Industry Match</h3>
-                <p id="industry">Industry alignment will appear here.</p>
+                <h3 data-i18n="analyzer.result_industry_match_title">Industry Match</h3>
+                <p id="industry" data-i18n="analyzer.result_industry_match_text">Industry alignment will appear here.</p>
             </div>
 
             <div class="result-card">
-                <h3>Startup Opportunity</h3>
-                <p id="startup-name">A research-driven startup concept will appear here.</p>
+                <h3 data-i18n="analyzer.result_startup_opportunity_title">Startup Opportunity</h3>
+                <p id="startup-name" data-i18n="analyzer.result_startup_opportunity_text">A research-driven startup concept will appear here.</p>
             </div>
 
             <div class="result-card">
-                <h3>Market Size</h3>
+                <h3 data-i18n="analyzer.result_market_size_title">Market Size</h3>
                 <p id="market-size">--</p>
             </div>
 
             <div class="result-card">
-                <h3>TAM / SAM / SOM</h3>
+                <h3 data-i18n="analyzer.result_tam_sam_som_title">TAM / SAM / SOM</h3>
                 <p id="market-tam">--</p>
                 <p id="market-sam">--</p>
                 <p id="market-som">--</p>
             </div>
 
             <div class="result-card">
-                <h3>Revenue Model</h3>
+                <h3 data-i18n="analyzer.result_revenue_model_title">Revenue Model</h3>
                 <p id="revenue-model">--</p>
             </div>
 
             <div class="result-card">
-                <h3>Risk Assessment</h3>
+                <h3 data-i18n="analyzer.result_risk_assessment_title">Risk Assessment</h3>
                 <p id="risk-score">--</p>
             </div>
 
             <div class="result-card">
-                <h3>Investor Interest</h3>
+                <h3 data-i18n="analyzer.result_investor_interest_title">Investor Interest</h3>
                 <p id="investor-interest">--</p>
             </div>
 
             <div class="result-card">
-                <h3>Funding Readiness</h3>
+                <h3 data-i18n="analyzer.result_funding_readiness_title">Funding Readiness</h3>
                 <p id="funding-readiness">--</p>
             </div>
 
         </div>
 
         <div class="results-actions">
-            <button class="btn-secondary" onclick="window.location.href='/dashboard'">View Dashboard</button>
-            <button class="btn-primary" onclick="window.location.href='/investor-report'">Open Investor Report</button>
+            <button class="btn-secondary" onclick="window.location.href='/dashboard'" data-i18n="results.view_dashboard">View Dashboard</button>
+            <button class="btn-primary" onclick="window.location.href='/investor-report'" data-i18n="results.open_report">Open Investor Report</button>
         </div>
 
     </section>
@@ -303,6 +293,7 @@
 
     </section>
 
+    <script src="/static/js/i18n.js"></script>
     <script src="/static/js/analyzer.js"></script>
 
 </body>

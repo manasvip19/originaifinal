@@ -19,7 +19,7 @@
     }
 
     if (!result || !result.analysis) {
-        const fallbackText = 'No analysis data is available. Please upload a research paper from the Analyzer page first.';
+        const fallbackText = (window.i18n && typeof i18n.t === 'function') ? i18n.t('investor.fallback_no_analysis') : 'No analysis data is available. Please upload a research paper from the Analyzer page first.';
         document.querySelectorAll('#investor-report p').forEach(element => {
             if (element.id) element.innerText = fallbackText;
         });
@@ -203,6 +203,8 @@ window.addEventListener('DOMContentLoaded', () => {
         downloadButton.addEventListener('click', downloadAnalysis);
     }
 });
+
+document.addEventListener('i18n:changed', loadAnalysisData);
 
 function downloadAnalysis() {
     let result = null;

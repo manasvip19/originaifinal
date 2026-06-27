@@ -53,6 +53,12 @@ SUPPORTED_EXTENSIONS = config.ALLOWED_EXTENSIONS
 
 workflow = WorkflowManager()
 
+@app.get("/settings", response_class=HTMLResponse)
+async def settings(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="settings.html"
+    )
 
 @app.post("/upload")
 async def upload_pdf(file: UploadFile = File(...)):

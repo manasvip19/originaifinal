@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OriginAI | Transform Research Into Startup Opportunities</title>
+    <title data-i18n="title.home">OriginAI | Transform Research Into Startup Opportunities</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -28,24 +28,34 @@
 
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="logo">
+        <div class="logo" data-i18n="OriginAI">
             <span class="logo-circle"></span>
             OriginAI
         </div>
 
         <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/analyzer">Analyzer</a></li>
-            <li><a href="/dashboard">Dashboard</a></li>
-            <li><a href="/investor-report">Investor Report</a></li>
-            <li><a href="/pitchdeck">Pitch Deck</a></li>
+            <li><a href="/" data-i18n="nav.home">Home</a></li>
+            <li><a href="/analyzer" data-i18n="nav.analyzer">Analyzer</a></li>
+            <li><a href="/dashboard" data-i18n="nav.dashboard">Dashboard</a></li>
+            <li><a href="/investor-report" data-i18n="nav.investor_report">Investor Report</a></li>
+            <li><a href="/pitchdeck" data-i18n="nav.pitchdeck">Pitch Deck</a></li>
         </ul>
 
         <div class="nav-buttons">
             <button class="btn-primary"
-                onclick="window.location.href='/analyzer'">
+                onclick="window.location.href='/analyzer'"
+                data-i18n="btn.analyze_research">
                 Analyze Research
             </button>
+        </div>
+
+        <div class="lang-selector">
+            <select id="langSelector" aria-label="Language selector">
+                <option value="en">English</option>
+                <option value="hi">हिन्दी</option>
+                <option value="te">తెలుగు</option>
+                <option value="ta">தமிழ்</option>
+            </select>
         </div>
     </nav>
 
@@ -54,11 +64,11 @@
 
         <div class="hero-left">
 
-            <div class="hero-badge">
+            <div class="hero-badge" data-i18n="hero.badge" data-i18n-html="true">
                 AI-Powered Commercialization Engine
             </div>
 
-            <h1>
+            <h1 data-i18n="hero.h1" data-i18n-html="true">
                 Research Creates
                 <span>Discoveries</span>
                 <br>
@@ -66,18 +76,18 @@
                 <span>Companies</span>
             </h1>
 
-            <p>
+            <p data-i18n="hero.p">
                 Convert breakthrough academic research into startup opportunities,
                 investor-ready ventures, market intelligence, and real-world impact.
             </p>
 
             <div class="hero-buttons">
 
-                <button class="btn-primary hero-btn" onclick="window.location.href='/analyzer'">
+                <button class="btn-primary hero-btn" onclick="window.location.href='/analyzer'" data-i18n="btn.start_analyzing">
                     Start Analyzing
                 </button>
 
-                <button class="btn-glass hero-btn" onclick="window.location.href='/dashboard'">
+                <button class="btn-glass hero-btn" onclick="window.location.href='/dashboard'" data-i18n="btn.watch_demo">
                     Watch Demo
                 </button>
 
@@ -87,17 +97,17 @@
 
                 <div class="metric">
                     <h3>10M+</h3>
-                    <span>Research Papers</span>
+                    <span data-i18n="hero.metric_research_papers">Research Papers</span>
                 </div>
 
                 <div class="metric">
                     <h3>500K+</h3>
-                    <span>Discoveries</span>
+                    <span data-i18n="hero.metric_discoveries">Discoveries</span>
                 </div>
 
                 <div class="metric">
                     <h3>50K+</h3>
-                    <span>Startup Opportunities</span>
+                    <span data-i18n="hero.metric_startup_opportunities">Startup Opportunities</span>
                 </div>
 
             </div>
@@ -108,43 +118,43 @@
 
             <div class="pipeline-card">
 
-                <div class="pipeline-title">
+                    <div class="pipeline-title" data-i18n="pipeline.innovation_pipeline">
                     Innovation Pipeline
                 </div>
 
                 <div class="pipeline">
 
-                    <div class="pipeline-step active">
+                    <div class="pipeline-step active" data-i18n="home.pipeline_research_paper">
                         Research Paper
                     </div>
 
                     <div class="line"></div>
 
-                    <div class="pipeline-step">
+                    <div class="pipeline-step" data-i18n="home.pipeline_discovery">
                         Discovery
                     </div>
 
                     <div class="line"></div>
 
-                    <div class="pipeline-step">
+                    <div class="pipeline-step" data-i18n="home.pipeline_industry_match">
                         Industry Match
                     </div>
 
                     <div class="line"></div>
 
-                    <div class="pipeline-step">
+                    <div class="pipeline-step" data-i18n="home.pipeline_problem_mapping">
                         Problem Mapping
                     </div>
 
                     <div class="line"></div>
 
-                    <div class="pipeline-step">
+                    <div class="pipeline-step" data-i18n="home.pipeline_startup_concept">
                         Startup Concept
                     </div>
 
                     <div class="line"></div>
 
-                    <div class="pipeline-step final">
+                    <div class="pipeline-step final" data-i18n="home.pipeline_investment_opportunity">
                         Investment Opportunity
                     </div>
 
@@ -178,19 +188,15 @@
 
     <div class="section-header">
 
-        <span class="section-tag">
+        <span class="section-tag" data-i18n="home.agent_network_tag">
             AI Agent Ecosystem
         </span>
 
-        <h2>
+        <h2 data-i18n="home.agent_network_title">
             Multi-Agent Innovation Engine
         </h2>
 
-        <p>
-            Specialized AI agents collaborate to transform
-            research discoveries into startup opportunities.
-        </p>
-
+        <p data-i18n="home.agent_network_description">
     </div>
 
     <div class="agent-network">
@@ -202,57 +208,57 @@
         <div class="connection connection-5"></div>
 
         <div class="agent-card research">
-            <h3>Research Agent</h3>
-            <p>
+            <h3 data-i18n="home.agent_research_title">Research Agent</h3>
+            <p data-i18n="home.agent_research_description">
                 Understands papers and extracts findings.
             </p>
         </div>
 
         <div class="agent-card discovery">
-            <h3>Discovery Agent</h3>
-            <p>
+            <h3 data-i18n="home.agent_discovery_title">Discovery Agent</h3>
+            <p data-i18n="home.agent_discovery_description">
                 Finds novel innovations and breakthroughs.
             </p>
         </div>
 
         <div class="agent-card industry">
-            <h3>Industry Agent</h3>
-            <p>
+            <h3 data-i18n="home.agent_industry_title">Industry Agent</h3>
+            <p data-i18n="home.agent_industry_description">
                 Maps discoveries to industries.
             </p>
         </div>
 
         <div class="agent-card problem">
-            <h3>Problem Agent</h3>
-            <p>
+            <h3 data-i18n="home.agent_problem_title">Problem Agent</h3>
+            <p data-i18n="home.agent_problem_description">
                 Identifies real-world pain points.
             </p>
         </div>
 
         <div class="agent-card startup">
-            <h3>Startup Agent</h3>
-            <p>
+            <h3 data-i18n="home.agent_startup_title">Startup Agent</h3>
+            <p data-i18n="home.agent_startup_description">
                 Generates startup opportunities.
             </p>
         </div>
 
         <div class="agent-card market">
-            <h3>Market Agent</h3>
-            <p>
+            <h3 data-i18n="home.agent_market_title">Market Agent</h3>
+            <p data-i18n="home.agent_market_description">
                 Analyzes commercial potential.
             </p>
         </div>
 
         <div class="agent-card scoring">
-            <h3>Scoring Agent</h3>
-            <p>
+            <h3 data-i18n="home.agent_scoring_title">Scoring Agent</h3>
+            <p data-i18n="home.agent_scoring_description">
                 Evaluates opportunity strength.
             </p>
         </div>
 
         <div class="agent-card investor">
-            <h3>Investor Agent</h3>
-            <p>
+            <h3 data-i18n="home.agent_investor_title">Investor Agent</h3>
+            <p data-i18n="home.agent_investor_description">
                 Creates investor-ready reports.
             </p>
         </div>
@@ -264,19 +270,19 @@
 <!-- RESEARCH TO STARTUP PIPELINE -->
 <!-- ===================================== -->
 
-<section class="pipeline-section">
+<section class="pipeline-section" data-i18n-section="pipeline">
 
     <div class="section-header">
 
-        <span class="section-tag">
+        <span class="section-tag" data-i18n="home.pipeline_section_tag">
             Research Commercialization Process
         </span>
 
-        <h2>
+        <h2 data-i18n="home.pipeline_section_title">
             From Discovery To Startup
         </h2>
 
-        <p>
+        <p data-i18n="home.pipeline_section_description">
             OriginAI transforms academic breakthroughs into
             commercially viable startup opportunities through
             a structured AI-powered pipeline.
@@ -290,9 +296,9 @@
 
             <div class="stage-icon">📄</div>
 
-            <h3>Research Paper</h3>
+            <h3 data-i18n="home.pipeline_step_research_paper">Research Paper</h3>
 
-            <p>
+            <p data-i18n="home.pipeline_step_research_paper_desc">
                 Upload PDFs, DOI links,
                 or research publications.
             </p>
@@ -305,9 +311,9 @@
 
             <div class="stage-icon">🧠</div>
 
-            <h3>Discovery Extraction</h3>
+            <h3 data-i18n="home.pipeline_step_discovery_extraction">Discovery Extraction</h3>
 
-            <p>
+            <p data-i18n="home.pipeline_step_discovery_extraction_desc">
                 AI identifies innovations,
                 breakthroughs, and novel methods.
             </p>
@@ -320,9 +326,9 @@
 
             <div class="stage-icon">🏭</div>
 
-            <h3>Industry Mapping</h3>
+            <h3 data-i18n="home.pipeline_step_industry_mapping">Industry Mapping</h3>
 
-            <p>
+            <p data-i18n="home.pipeline_step_industry_mapping_desc">
                 Technologies are matched
                 with target industries.
             </p>
@@ -335,9 +341,9 @@
 
             <div class="stage-icon">🚀</div>
 
-            <h3>Startup Generation</h3>
+            <h3 data-i18n="home.pipeline_step_startup_generation">Startup Generation</h3>
 
-            <p>
+            <p data-i18n="home.pipeline_step_startup_generation_desc">
                 Business opportunities
                 are automatically generated.
             </p>
@@ -350,9 +356,9 @@
 
             <div class="stage-icon">💰</div>
 
-            <h3>Investor Opportunity</h3>
+            <h3 data-i18n="home.pipeline_step_investor_opportunity">Investor Opportunity</h3>
 
-            <p>
+            <p data-i18n="home.pipeline_step_investor_opportunity_desc">
                 Market analysis,
                 scores, and reports.
             </p>
@@ -370,15 +376,15 @@
 
     <div class="section-header">
 
-        <span class="section-tag">
+        <span class="section-tag" data-i18n="home.dashboard_section_tag">
             Opportunity Intelligence
         </span>
 
-        <h2>
+        <h2 data-i18n="home.dashboard_section_title">
             AI-Powered Market Analysis
         </h2>
 
-        <p>
+        <p data-i18n="home.dashboard_section_description">
             Every discovery is evaluated for innovation,
             feasibility, scalability, and market potential.
         </p>
@@ -391,7 +397,7 @@
 
         <div class="dashboard-card score-card">
 
-            <h3>Opportunity Score</h3>
+            <h3 data-i18n="opportunity.score">Opportunity Score</h3>
 
             <div class="score-ring">
 
@@ -425,13 +431,13 @@
 
         <div class="dashboard-card market-card">
 
-            <h3>Market Opportunity</h3>
+            <h3 data-i18n="home.market_opportunity_title">Market Opportunity</h3>
 
             <div class="market-value">
                 $18.2B
             </div>
 
-            <span class="market-growth">
+            <span class="market-growth" data-i18n="home.market_growth">
                 ▲ +27.4%
             </span>
 
@@ -452,25 +458,25 @@
 
         <div class="dashboard-card metrics-card">
 
-            <h3>Performance Metrics</h3>
+            <h3 data-i18n="home.performance_metrics_title">Performance Metrics</h3>
 
             <div class="metric-row">
-                <span>Innovation</span>
+                <span data-i18n="home.metric_innovation">Innovation</span>
                 <span>96</span>
             </div>
 
             <div class="metric-row">
-                <span>Market Size</span>
+                <span data-i18n="home.metric_market_size">Market Size</span>
                 <span>92</span>
             </div>
 
             <div class="metric-row">
-                <span>Feasibility</span>
+                <span data-i18n="home.metric_feasibility">Feasibility</span>
                 <span>88</span>
             </div>
 
             <div class="metric-row">
-                <span>Scalability</span>
+                <span data-i18n="home.metric_scalability">Scalability</span>
                 <span>94</span>
             </div>
 
@@ -480,26 +486,26 @@
 
         <div class="dashboard-card startup-feed">
 
-            <h3>Generated Opportunities</h3>
+            <h3 data-i18n="home.generated_opportunities_title">Generated Opportunities</h3>
 
             <div class="startup-item">
-                <span>VoltForge AI</span>
-                <small>Energy Storage</small>
+                <span data-i18n="home.showcase_startup_name_1">VoltForge AI</span>
+                <small data-i18n="home.showcase_startup_sector_1">Energy Storage</small>
             </div>
 
             <div class="startup-item">
-                <span>PlantScan AI</span>
-                <small>Agriculture</small>
+                <span data-i18n="home.showcase_startup_name_2">PlantScan AI</span>
+                <small data-i18n="home.showcase_startup_sector_2">Agriculture</small>
             </div>
 
             <div class="startup-item">
-                <span>NanoMedX</span>
-                <small>Healthcare</small>
+                <span data-i18n="home.showcase_startup_name_3">NanoMedX</span>
+                <small data-i18n="home.showcase_startup_sector_3">Healthcare</small>
             </div>
 
             <div class="startup-item">
-                <span>AutoNav Labs</span>
-                <small>Robotics</small>
+                <span data-i18n="home.showcase_startup_name_4">AutoNav Labs</span>
+                <small data-i18n="home.showcase_startup_sector_4">Robotics</small>
             </div>
 
         </div>
@@ -521,15 +527,15 @@
 
     <div class="section-header">
 
-        <span class="section-tag">
+        <span class="section-tag" data-i18n="home.showcase_section_tag">
             Real Startup Opportunities
         </span>
 
-        <h2>
+        <h2 data-i18n="home.showcase_section_title">
             Research Transformed Into Ventures
         </h2>
 
-        <p>
+        <p data-i18n="home.showcase_section_description">
             See how OriginAI converts research discoveries into
             startup opportunities with market potential.
         </p>
@@ -540,26 +546,26 @@
 
         <div class="showcase-card">
 
-            <div class="research-tag">
+            <div class="research-tag" data-i18n="home.showcase_tag_1">
                 Agriculture AI
             </div>
 
-            <h3>Crop Disease Detection Research</h3>
+            <h3 data-i18n="home.showcase_title_1">Crop Disease Detection Research</h3>
 
             <div class="showcase-arrow">
                 ↓
             </div>
 
-            <h4>PlantScan AI</h4>
+            <h4 data-i18n="home.showcase_project_1">PlantScan AI</h4>
 
-            <p>
+            <p data-i18n="home.showcase_description_1">
                 AI-powered crop disease diagnosis platform.
             </p>
 
             <div class="showcase-footer">
 
-                <span>$5.2B Market</span>
-                <span>88/100 Score</span>
+                <span data-i18n="home.showcase_market_1">$5.2B Market</span>
+                <span data-i18n="home.showcase_score_1">88/100 Score</span>
 
             </div>
 
@@ -567,26 +573,26 @@
 
         <div class="showcase-card">
 
-            <div class="research-tag">
+            <div class="research-tag" data-i18n="home.showcase_tag_2">
                 Healthcare
             </div>
 
-            <h3>Nanomedicine Delivery System</h3>
+            <h3 data-i18n="home.showcase_title_2">Nanomedicine Delivery System</h3>
 
             <div class="showcase-arrow">
                 ↓
             </div>
 
-            <h4>NanoMedX</h4>
+            <h4 data-i18n="home.showcase_project_2">NanoMedX</h4>
 
-            <p>
+            <p data-i18n="home.showcase_description_2">
                 Precision drug delivery startup.
             </p>
 
             <div class="showcase-footer">
 
-                <span>$12.4B Market</span>
-                <span>93/100 Score</span>
+                <span data-i18n="home.showcase_market_2">$12.4B Market</span>
+                <span data-i18n="home.showcase_score_2">93/100 Score</span>
 
             </div>
 
@@ -594,26 +600,26 @@
 
         <div class="showcase-card">
 
-            <div class="research-tag">
+            <div class="research-tag" data-i18n="home.showcase_tag_3">
                 Energy
             </div>
 
-            <h3>Quantum Battery Technology</h3>
+            <h3 data-i18n="home.showcase_title_3">Quantum Battery Technology</h3>
 
             <div class="showcase-arrow">
                 ↓
             </div>
 
-            <h4>VoltForge AI</h4>
+            <h4 data-i18n="home.showcase_project_3">VoltForge AI</h4>
 
-            <p>
+            <p data-i18n="home.showcase_description_3">
                 Next-generation energy storage solutions.
             </p>
 
             <div class="showcase-footer">
 
-                <span>$18.2B Market</span>
-                <span>94/100 Score</span>
+                <span data-i18n="home.showcase_market_3">$18.2B Market</span>
+                <span data-i18n="home.showcase_score_3">94/100 Score</span>
 
             </div>
 
@@ -621,26 +627,26 @@
 
         <div class="showcase-card">
 
-            <div class="research-tag">
+            <div class="research-tag" data-i18n="home.showcase_tag_4">
                 Robotics
             </div>
 
-            <h3>Autonomous Navigation Research</h3>
+            <h3 data-i18n="home.showcase_title_4">Autonomous Navigation Research</h3>
 
             <div class="showcase-arrow">
                 ↓
             </div>
 
-            <h4>AutoNav Labs</h4>
+            <h4 data-i18n="home.showcase_project_4">AutoNav Labs</h4>
 
-            <p>
+            <p data-i18n="home.showcase_description_4">
                 Autonomous mobility intelligence platform.
             </p>
 
             <div class="showcase-footer">
 
-                <span>$21B Market</span>
-                <span>91/100 Score</span>
+                <span data-i18n="home.showcase_market_4">$21B Market</span>
+                <span data-i18n="home.showcase_score_4">91/100 Score</span>
 
             </div>
 
@@ -657,15 +663,15 @@
 
     <div class="section-header">
 
-        <span class="section-tag">
+        <span class="section-tag" data-i18n="home.radar_section_tag">
             Innovation Intelligence
         </span>
 
-        <h2>
+        <h2 data-i18n="home.radar_section_title">
             Emerging Opportunity Radar
         </h2>
 
-        <p>
+        <p data-i18n="home.radar_section_description">
             Discover industries with the highest commercialization potential.
         </p>
 
@@ -677,39 +683,39 @@
         <div class="radar-circle circle-2"></div>
         <div class="radar-circle circle-3"></div>
 
-        <div class="radar-center">
+        <div class="radar-center" data-i18n="home.radar_brand">
             ORIGIN AI
         </div>
 
-        <div class="radar-node healthcare">
+        <div class="radar-node healthcare" data-i18n="home.radar_node_healthcare">
             Healthcare
         </div>
 
-        <div class="radar-node energy">
+        <div class="radar-node energy" data-i18n="home.radar_node_energy">
             Energy
         </div>
 
-        <div class="radar-node agriculture">
+        <div class="radar-node agriculture" data-i18n="home.radar_node_agriculture">
             Agriculture
         </div>
 
-        <div class="radar-node robotics">
+        <div class="radar-node robotics" data-i18n="home.radar_node_robotics">
             Robotics
         </div>
 
-        <div class="radar-node fintech">
+        <div class="radar-node fintech" data-i18n="home.radar_node_fintech">
             FinTech
         </div>
 
-        <div class="radar-node climate">
+        <div class="radar-node climate" data-i18n="home.radar_node_climate">
             ClimateTech
         </div>
 
-        <div class="radar-node cyber">
+        <div class="radar-node cyber" data-i18n="home.radar_node_cyber">
             Cybersecurity
         </div>
 
-        <div class="radar-node education">
+        <div class="radar-node education" data-i18n="home.radar_node_education">
             Education
         </div>
 
@@ -719,11 +725,11 @@
 
 <div class="radar-info">
 
-    <h3 id="industryName">
+    <h3 id="industryName" data-i18n="home.radar_info_industry_name">
         Healthcare
     </h3>
 
-    <p id="industryStats">
+    <p id="industryStats" data-i18n="home.radar_info_industry_stats">
         Opportunities: 421 | Growth: +32%
     </p>
 
@@ -736,15 +742,15 @@
 
     <div class="section-header">
 
-        <span class="section-tag">
+        <span class="section-tag" data-i18n="home.investor_section_tag">
             Investor Intelligence
         </span>
 
-        <h2>
+        <h2 data-i18n="home.investor_section_title">
             Investment Readiness Analysis
         </h2>
 
-        <p>
+        <p data-i18n="home.investor_section_description">
             Evaluate commercialization potential with market,
             competition, growth, and risk intelligence.
         </p>
@@ -757,7 +763,7 @@
 
         <div class="investor-card large-card">
 
-            <div class="card-header">
+            <div class="card-header" data-i18n="home.revenue_projection_title">
                 Revenue Projection
             </div>
 
@@ -767,22 +773,22 @@
 
                 <div class="year">
                     <span>$0.8M</span>
-                    <small>Year 1</small>
+                    <small data-i18n="home.revenue_projection_year_1">Year 1</small>
                 </div>
 
                 <div class="year">
                     <span>$2.4M</span>
-                    <small>Year 2</small>
+                    <small data-i18n="home.revenue_projection_year_2">Year 2</small>
                 </div>
 
                 <div class="year">
                     <span>$6.8M</span>
-                    <small>Year 3</small>
+                    <small data-i18n="home.revenue_projection_year_3">Year 3</small>
                 </div>
 
                 <div class="year">
                     <span>$14.2M</span>
-                    <small>Year 4</small>
+                    <small data-i18n="home.revenue_projection_year_4">Year 4</small>
                 </div>
 
             </div>
@@ -793,49 +799,49 @@
 
         <div class="investor-card">
 
-            <h3>TAM</h3>
+            <h3 data-i18n="home.investor_tam_title">TAM</h3>
 
             <div class="big-number">
                 $18.2B
             </div>
 
-            <small>Total Addressable Market</small>
+            <small data-i18n="home.investor_tam_description">Total Addressable Market</small>
 
         </div>
 
         <div class="investor-card">
 
-            <h3>SAM</h3>
+            <h3 data-i18n="home.investor_sam_title">SAM</h3>
 
             <div class="big-number">
                 $4.8B
             </div>
 
-            <small>Serviceable Market</small>
+            <small data-i18n="home.investor_sam_description">Serviceable Market</small>
 
         </div>
 
         <div class="investor-card">
 
-            <h3>Competition Index</h3>
+            <h3 data-i18n="home.competition_index_title">Competition Index</h3>
 
             <div class="big-number">
                 32%
             </div>
 
-            <small>Low Competition</small>
+            <small data-i18n="home.competition_index_description">Low Competition</small>
 
         </div>
 
         <div class="investor-card">
 
-            <h3>Risk Score</h3>
+            <h3 data-i18n="home.risk_score_title">Risk Score</h3>
 
             <div class="big-number risk">
                 12%
             </div>
 
-            <small>Low Risk</small>
+            <small data-i18n="home.risk_score_description">Low Risk</small>
 
         </div>
 
@@ -844,22 +850,22 @@
 
     <div class="stat-card">
         <h2>10M+</h2>
-        <p>Research Papers</p>
+        <p data-i18n="home.stats_research_papers">Research Papers</p>
     </div>
 
     <div class="stat-card">
         <h2>500K+</h2>
-        <p>Discoveries</p>
+        <p data-i18n="home.stats_discoveries">Discoveries</p>
     </div>
 
     <div class="stat-card">
         <h2>50K+</h2>
-        <p>Startup Opportunities</p>
+        <p data-i18n="home.stats_startup_opportunities">Startup Opportunities</p>
     </div>
 
     <div class="stat-card">
         <h2>200+</h2>
-        <p>Industries</p>
+        <p data-i18n="home.stats_industries">Industries</p>
     </div>
 
 </section>
@@ -868,16 +874,16 @@
 
     <div class="cta-card">
 
-        <h2>
+        <h2 data-i18n="home.cta_title">
             Turn Research Into Companies
         </h2>
 
-        <p>
+        <p data-i18n="home.cta_description">
             Discover startup opportunities hidden inside
             academic research and emerging technologies.
         </p>
 
-        <button class="btn-primary">
+        <button class="btn-primary" data-i18n="btn.start_analyzing">
             Start Analyzing →
         </button>
 
@@ -888,7 +894,7 @@
 
         <h2>OriginAI</h2>
 
-        <p>
+        <p data-i18n="home.footer_tagline">
             Transforming research into startup opportunities.
         </p>
 
@@ -897,23 +903,23 @@
     <div class="footer-links">
 
         <div>
-            <h4>Platform</h4>
-            <a href="/analyzer">Research Analysis</a>
-            <a href="/dashboard">Startup Engine</a>
-            <a href="/investor-report">Investor Intelligence</a>
+            <h4 data-i18n="home.footer_section_platform">Platform</h4>
+            <a href="/analyzer" data-i18n="home.footer_link_research_analysis">Research Analysis</a>
+            <a href="/dashboard" data-i18n="home.footer_link_startup_engine">Startup Engine</a>
+            <a href="/investor-report" data-i18n="home.footer_link_investor_intelligence">Investor Intelligence</a>
         </div>
 
         <div>
-            <h4>Resources</h4>
-            <a href="/investor-report">Documentation</a>
-            <a href="/investor-report">API</a>
-            <a href="/investor-report">Support</a>
+            <h4 data-i18n="home.footer_section_resources">Resources</h4>
+            <a href="/investor-report" data-i18n="home.footer_link_documentation">Documentation</a>
+            <a href="/investor-report" data-i18n="home.footer_link_api">API</a>
+            <a href="/investor-report" data-i18n="home.footer_link_support">Support</a>
         </div>
 
         <div>
-            <h4>Company</h4>
-            <a href="/">About</a>
-            <a href="/">Contact</a>
+            <h4 data-i18n="home.footer_section_company">Company</h4>
+            <a href="/" data-i18n="home.footer_link_about">About</a>
+            <a href="/" data-i18n="home.footer_link_contact">Contact</a>
     </div>
 
 </footer>
@@ -927,6 +933,7 @@
         });
     </script>
 
+    <script src="/static/js/i18n.js"></script>
     <script src="/static/js/main.js"></script>
 
 </body>

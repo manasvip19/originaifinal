@@ -21,7 +21,9 @@
     if (!container) return;
 
     if (!result || !result.analysis) {
-        container.innerHTML = '<div class="card"><h3>No pitch deck available</h3><p>Upload a PDF and run analysis first.</p></div>';
+        const noDeck = (window.i18n && typeof i18n.t === 'function') ? i18n.t('pitchdeck.no_deck') : 'No pitch deck available';
+        const uploadFirst = (window.i18n && typeof i18n.t === 'function') ? i18n.t('pitchdeck.upload_first') : 'Upload a PDF and run analysis first.';
+        container.innerHTML = `<div class="card"><h3>${noDeck}</h3><p>${uploadFirst}</p></div>`;
         return;
     }
 
@@ -86,9 +88,10 @@
         }
     ];
 
+    const slideLabel = (window.i18n && typeof i18n.t === 'function') ? i18n.t('slide.slide_number') : 'Slide';
     container.innerHTML = slides.map((slide, index) => `
         <div class="card slide-card">
-            <div class="slide-number">Slide ${index + 1}</div>
+            <div class="slide-number">${slideLabel} ${index + 1}</div>
             <h3>${slide.title}</h3>
             <p>${slide.content}</p>
         </div>
@@ -157,3 +160,4 @@ function printDeck() {
 }
 
 window.addEventListener('DOMContentLoaded', loadPitchDeck);
+document.addEventListener('i18n:changed', loadPitchDeck);
